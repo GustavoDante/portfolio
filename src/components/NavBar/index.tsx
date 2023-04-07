@@ -1,6 +1,6 @@
 import { NavBarContainer } from './styles'
 import { NavLink } from 'react-router-dom'
-import logoGustavo from '../../assets/gustavo-dante.svg'
+import logoGustavo from '../../assets/icons/header-gustavo-dante-icon.svg'
 
 export function NavBar() {
   return (
