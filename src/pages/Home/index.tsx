@@ -1,7 +1,7 @@
 import PhotoGustavo from '../../assets/images/photo-gustavo.png'
 import TypescriptIcon from '../../assets/icons/typescript-icon.svg'
 import ReactIcon from '../../assets/icons/react-icon.svg'
-import JavascriptIcon from '../../assets/icons/javascript-icon.svg'
+import NodeIcon from '../../assets/icons/node-icon.svg'
 import {
   HeaderContainer,
   HomeContainer,
@@ -28,7 +28,7 @@ export function Home() {
               <div>
                 <img src={TypescriptIcon} alt="icone do Typescript" />
                 <img src={ReactIcon} alt="icone do React" />
-                <img src={JavascriptIcon} alt="Icone do JavaScript" />
+                <img src={NodeIcon} alt="Icone do Node" />
               </div>
               <img src={PhotoGustavo} alt="Gustavo Dante" />
             </div>
