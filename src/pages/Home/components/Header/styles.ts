@@ -18,6 +18,10 @@ export const HeaderContainer = styled.header`
     background-size: 300vw;
     background-position: center;
     background-repeat: no-repeat;
+
+    & > img {
+      display: none;
+    }
   }
 `
 
