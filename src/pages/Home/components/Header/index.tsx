@@ -2,6 +2,7 @@ import PhotoGustavo from '../../../../assets/images/photo-gustavo.png'
 import TypescriptIcon from '../../../../assets/icons/typescript-icon.svg'
 import ReactIcon from '../../../../assets/icons/react-icon.svg'
 import NodeIcon from '../../../../assets/icons/node-icon.svg'
+import BackgroundHeader from '../../../../assets/backgrounds/headerr-background.png'
 import {
   ContactButtonsContainer,
   HeaderContainer,
