@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   display: block;
   width: 100%;
-  height: 45rem;
+  height: 42rem;
 
   & > div {
     position: absolute;
@@ -13,7 +13,7 @@ export const HeaderContainer = styled.header`
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     width: 100%;
-    height: 45rem;
+    height: 42rem;
     z-index: 1;
     overflow: hidden;
 
@@ -25,6 +25,40 @@ export const HeaderContainer = styled.header`
       width: 100%;
       object-fit: cover;
       z-index: -1;
+    }
+
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 1fr 1fr;
+      height: 25rem;
+
+      & > div:not(:first-child) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-right: 2rem;
+      }
+
+      @media screen and (max-width: 650px) {
+        grid-template-columns: 1fr;
+        height: 37rem;
+
+        & > div:not(:first-child) {
+          padding: 0 1rem 0 1rem;
+          width: 100%;
+
+          & > div {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      height: 25rem;
+    }
+
+    @media screen and (max-width: 650px) {
+      height: 37rem;
     }
   }
 `
@@ -42,6 +76,23 @@ export const IntroductionContainer = styled.div`
     align-self: flex-start;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+  }
+
+  @media screen and (max-width: 850px) {
+    justify-content: flex-start;
+    margin-top: 5rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    align-items: center;
+
+    & > strong {
+      align-self: center;
+    }
+
+    & > span {
+      text-align: center;
+    }
   }
 `
 
@@ -72,6 +123,10 @@ export const PhotoContainer = styled.div`
 
       & > img {
         width: 2rem;
+
+        @media screen and (max-width: 400px) {
+          width: 1rem;
+        }
       }
     }
 
@@ -80,6 +135,16 @@ export const PhotoContainer = styled.div`
       bottom: 0;
       width: 110%;
       object-fit: cover;
+    }
+
+    @media screen and (max-width: 850px) {
+      width: 20rem;
+      height: 18rem;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 15rem;
+      height: 13rem;
     }
   }
 `
@@ -94,7 +159,7 @@ export const ContactButtonsContainer = styled.div`
     border-radius: 0.5rem;
     color: ${(props) => props.theme.white};
     font-weight: 600;
-    font-size: 0%.8rem;
+    font-size: 0.8rem;
     border: 1px solid ${(props) => props.theme.white};
 
     :first-child {

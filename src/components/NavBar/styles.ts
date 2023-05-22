@@ -16,7 +16,6 @@ export const NavBarContainer = styled.div`
     gap: 2rem;
 
     a {
-      display: flex;
       justify-content: center;
       align-items: center;
 
@@ -36,5 +35,40 @@ export const NavBarContainer = styled.div`
 
   & > div > img {
     width: 10rem;
+  }
+`
+
+interface DropdownProps {
+  isVisible: boolean
+}
+
+export const DropdownContent = styled.div<DropdownProps>`
+  display: ${(props) => (props.isVisible ? 'flex' : 'none')};
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  z-index: 2;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  height: 100vh;
+  background-color: ${(props) => props.theme['blue-900']};
+  border-radius: 1rem 0 0 1rem;
+`
+
+export const NavBarContent = styled.nav`
+  & > div {
+    display: none;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    & > div {
+      display: block;
+    }
+
+    > a {
+      display: none;
+    }
   }
 `

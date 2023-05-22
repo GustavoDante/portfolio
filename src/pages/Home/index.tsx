@@ -9,7 +9,7 @@ export function Home() {
     <HomeContainer>
       <Header />
       <AboutMeContainer>
-        <h1>Sobre mim</h1>
+        <h1 id="about-me">Sobre mim</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. Nisl sit vel varius gravida
           sit amet hac. A ut aenean lorem facilisis. Vel laoreet netus congue
@@ -30,7 +30,7 @@ export function Home() {
         </ContactButtonsContainer>
       </AboutMeContainer>
       <SkillsContainer>
-        <h1>Minhas Skills</h1>
+        <h1 id="my-skills">Minhas Skills</h1>
       </SkillsContainer>
     </HomeContainer>
   )

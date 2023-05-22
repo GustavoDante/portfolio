@@ -32,4 +32,8 @@ export const GlobalStyle = createGlobalStyle`
     a {
         cursor: pointer;
     }
+
+    strong {
+        white-space: nowrap;
+    }
 `
