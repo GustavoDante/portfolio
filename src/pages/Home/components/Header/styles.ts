@@ -39,28 +39,27 @@ export const HeaderContainer = styled.header`
       & > div:not(:first-child) {
         position: absolute;
         bottom: 0;
-        right: 0;
-        padding-right: 2rem;
+        right: 0rem;
+        padding-right: 4rem;
       }
+    }
+    @media screen and (max-width: 675px) {
+      grid-template-columns: 1fr;
+      height: 35rem;
 
-      @media screen and (max-width: 650px) {
-        grid-template-columns: 1fr;
-        height: 35rem;
+      & > div:not(:first-child) {
+        padding: 0 1rem 0 1rem;
+        width: 100%;
 
-        & > div:not(:first-child) {
-          padding: 0 1rem 0 1rem;
-          width: 100%;
-
-          & > div {
-            margin: 0 auto;
-          }
+        & > div {
+          margin: 0 auto;
         }
       }
+    }
 
-      @media screen and (max-width: 400px) {
-        height: 31.5rem;
-        padding: 0;
-      }
+    @media screen and (max-width: 400px) {
+      height: 31.5rem;
+      padding: 0;
     }
   }
 
@@ -68,7 +67,7 @@ export const HeaderContainer = styled.header`
     height: 25rem;
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 675px) {
     height: 35rem;
   }
 
@@ -97,7 +96,7 @@ export const IntroductionContainer = styled.div`
     margin-top: 5rem;
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 675px) {
     align-items: center;
 
     & > strong {
@@ -152,13 +151,13 @@ export const PhotoContainer = styled.div`
     }
 
     @media screen and (max-width: 850px) {
-      width: 20rem;
-      height: 18rem;
+      width: 18rem;
+      height: 17rem;
     }
 
     @media screen and (max-width: 400px) {
       width: 15rem;
-      height: 13rem;
+      height: 14rem;
     }
   }
 `

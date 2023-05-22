@@ -23,7 +23,7 @@ export const AboutMeContainer = styled.div`
         width: 3rem;
       }
 
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 675px) {
         width: 2rem;
       }
     }
@@ -41,7 +41,7 @@ export const AboutMeContainer = styled.div`
         left: 3rem;
       }
 
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 675px) {
         left: 2rem;
       }
     }
@@ -73,7 +73,7 @@ export const SkillsContainer = styled.div`
         width: calc(100% - 18rem);
       }
 
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 675px) {
         left: 17rem;
         width: calc(100% - 17rem);
       }
@@ -93,7 +93,7 @@ export const SkillsContainer = styled.div`
         left: 18rem;
       }
 
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 675px) {
         left: 17rem;
       }
     }
