@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   & > div {
     position: absolute;
     left: 0;
-    padding: 0 4rem;
+    padding: 0 12rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -27,9 +27,14 @@ export const HeaderContainer = styled.header`
       z-index: -1;
     }
 
+    @media screen and (max-width: 1050px) {
+      padding: 0 4rem;
+    }
+
     @media screen and (max-width: 850px) {
       grid-template-columns: 1fr 1fr;
       height: 25rem;
+      padding: 0 4rem;
 
       & > div:not(:first-child) {
         position: absolute;
@@ -40,7 +45,7 @@ export const HeaderContainer = styled.header`
 
       @media screen and (max-width: 650px) {
         grid-template-columns: 1fr;
-        height: 37rem;
+        height: 35rem;
 
         & > div:not(:first-child) {
           padding: 0 1rem 0 1rem;
@@ -51,15 +56,24 @@ export const HeaderContainer = styled.header`
           }
         }
       }
-    }
 
-    @media screen and (max-width: 850px) {
-      height: 25rem;
+      @media screen and (max-width: 400px) {
+        height: 31.5rem;
+        padding: 0;
+      }
     }
+  }
 
-    @media screen and (max-width: 650px) {
-      height: 37rem;
-    }
+  @media screen and (max-width: 850px) {
+    height: 25rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    height: 35rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    height: 31.5rem;
   }
 `
 

@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
-    strong {
+    strong, h1 {
         white-space: nowrap;
     }
 `
