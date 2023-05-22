@@ -14,13 +14,17 @@ export const HeaderContainer = styled.header`
     gap: 1rem;
     width: 100%;
     height: 45rem;
-    background-image: url('/src/assets/backgrounds/header-background.png');
-    background-size: 300vw;
-    background-position: center;
-    background-repeat: no-repeat;
+    z-index: 1;
+    overflow: hidden;
 
     & > img {
-      display: none;
+      min-width: 80rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
   }
 `

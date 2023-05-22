@@ -14,7 +14,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <div>
-        <img src={BackgroundHeader} alt="" />
+        <img src={BackgroundHeader} alt="relevo" />
         <IntroductionContainer>
           <strong>Fullstack Developer</strong>
           <h1>Gustavo Dante</h1>
