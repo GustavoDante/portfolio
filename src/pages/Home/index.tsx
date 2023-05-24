@@ -3,6 +3,7 @@ import { ContactButtonsContainer } from './components/Header/styles'
 import { AboutMeContainer, HomeContainer, SkillsContainer } from './styles'
 
 import Curriculum from '../../assets/files/curriculo.pdf'
+import { TechnologiesPanel } from './components/TechnologiesPanel'
 
 export function Home() {
   return (
@@ -31,6 +32,7 @@ export function Home() {
       </AboutMeContainer>
       <SkillsContainer>
         <h1 id="my-skills">Minhas Skills</h1>
+        <TechnologiesPanel />
       </SkillsContainer>
     </HomeContainer>
   )

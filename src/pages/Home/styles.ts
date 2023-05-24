@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
-  /* display: flex; */
+  > header + div,
+  > div + div {
+    margin-top: 3rem;
+  }
 `
 
 export const AboutMeContainer = styled.div`

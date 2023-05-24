@@ -136,6 +136,7 @@ export const PhotoContainer = styled.div`
 
       & > img {
         width: 2rem;
+        filter: brightness(0) invert(1);
 
         @media screen and (max-width: 400px) {
           width: 1rem;
