@@ -11,7 +11,7 @@ export const AboutMeContainer = styled.div`
   & > h1 {
     display: flex;
     align-items: center;
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 2rem 0;
 
     ::before {
       content: '';
@@ -59,7 +59,7 @@ export const SkillsContainer = styled.div`
   & > h1 {
     display: flex;
     align-items: center;
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 2rem 0;
     overflow: hidden;
 
     ::before {
@@ -98,6 +98,40 @@ export const SkillsContainer = styled.div`
 
       @media screen and (max-width: 675px) {
         left: 17rem;
+      }
+    }
+  }
+`
+
+export const PortfolioContainer = styled.div`
+  & > h1 {
+    position: flex;
+    display: flex;
+    margin: 2rem 0 2rem 0;
+    align-items: center;
+    color: ${(props) => props.theme.black};
+
+    ::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      width: 24rem;
+      height: 3rem;
+      background-color: ${(props) => props.theme['green-300']};
+      border-radius: 0 1rem 1rem 0;
+
+      @media screen and (max-width: 1050px) {
+        width: 19rem;
+      }
+
+      @media screen and (max-width: 675px) {
+        width: 18rem;
+      }
+
+      @media screen and (max-width: 400px) {
+        width: 100%;
       }
     }
   }

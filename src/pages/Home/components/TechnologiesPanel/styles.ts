@@ -67,7 +67,9 @@ export const TechnologieWithOverlay = styled.div`
     text-align: center;
 
     & > h3 {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
+      color: ${(props) => props.theme['green-300']};
     }
   }
 

@@ -1,9 +1,15 @@
 import { Header } from './components/Header'
 import { ContactButtonsContainer } from './components/Header/styles'
-import { AboutMeContainer, HomeContainer, SkillsContainer } from './styles'
+import {
+  AboutMeContainer,
+  HomeContainer,
+  PortfolioContainer,
+  SkillsContainer,
+} from './styles'
 
 import Curriculum from '../../assets/files/curriculo.pdf'
 import { TechnologiesPanel } from './components/TechnologiesPanel'
+import { PortfolioPanel } from './components/PortfolioPanel'
 
 export function Home() {
   return (
@@ -34,6 +40,10 @@ export function Home() {
         <h1 id="my-skills">Minhas Skills</h1>
         <TechnologiesPanel />
       </SkillsContainer>
+      <PortfolioContainer>
+        <h1 id="my-projects">Meus Projetos</h1>
+        <PortfolioPanel />
+      </PortfolioContainer>
     </HomeContainer>
   )
 }

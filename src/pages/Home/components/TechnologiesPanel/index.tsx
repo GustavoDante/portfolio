@@ -191,7 +191,7 @@ export function TechnologiesPanel() {
       <TechnologieWithOverlay>
         <img src={jqueryIcon} alt="jquery icon" />
         <div>
-          <h3>Título da Imagem 2</h3>
+          <h3>jQuery</h3>
           <p>
             jQuery é uma biblioteca JavaScript popular que simplifica a
             manipulação do DOM, a animação, o gerenciamento de eventos e a
