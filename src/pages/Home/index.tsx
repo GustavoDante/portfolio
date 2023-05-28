@@ -2,16 +2,43 @@ import { Header } from './components/Header'
 import { ContactButtonsContainer } from './components/Header/styles'
 import {
   AboutMeContainer,
+  FeedbacksContainer,
   HomeContainer,
   PortfolioContainer,
+  ScrollToTopButton,
   SkillsContainer,
 } from './styles'
 
 import Curriculum from '../../assets/files/curriculo.pdf'
 import { TechnologiesPanel } from './components/TechnologiesPanel'
 import { PortfolioPanel } from './components/PortfolioPanel'
+import { FeedBackupsPanel } from './components/FeedBackupsPanel'
+import { useEffect, useState } from 'react'
+import ArrowUp from '../../assets/icons/arrow-up.svg'
+import { Footer } from './components/Footer'
 
 export function Home() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  const handleScroll = () => {
+    if (window.scrollY > 500) {
+      setIsVisible(true)
+    } else {
+      setIsVisible(false)
+    }
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <HomeContainer>
       <Header />
@@ -44,6 +71,14 @@ export function Home() {
         <h1 id="my-projects">Meus Projetos</h1>
         <PortfolioPanel />
       </PortfolioContainer>
+      <FeedbacksContainer>
+        <h1 id="feedbacks">Meus Feedbacks</h1>
+        <FeedBackupsPanel />
+      </FeedbacksContainer>
+      <Footer />
+      <ScrollToTopButton show={isVisible} onClick={scrollToTop}>
+        <img src={ArrowUp} alt="arrow up" />
+      </ScrollToTopButton>
     </HomeContainer>
   )
 }

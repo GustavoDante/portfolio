@@ -16,6 +16,23 @@ export const PortfolioPanelContainer = styled.div`
       align-items: end;
     }
   }
+  @media screen and (max-width: 840px) {
+    display: block;
+    width: 100%;
+
+    > div {
+      display: flex;
+      width: 100%;
+      margin: 0;
+      gap: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 475px) {
+    > div {
+      display: block;
+    }
+  }
 `
 
 interface ProjectContainerProps {
@@ -72,6 +89,22 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
       & > img {
         filter: brightness(0.3);
       }
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    width: 20rem;
+  }
+
+  @media screen and (max-width: 1140px) {
+    width: 15rem;
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 100%;
+
+    & > a {
+      height: 100%;
     }
   }
 `

@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import { LayoutContainer } from './styles'
-import { NavBar } from '../../components/NavBar'
+import { NavBar } from '../../pages/Home/components/NavBar'
 
 export function DefaultLayout() {
   return (

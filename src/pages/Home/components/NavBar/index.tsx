@@ -1,5 +1,5 @@
 import { DropdownContent, NavBarContainer, NavBarContent } from './styles'
-import logoGustavo from '../../assets/icons/header-gustavo-dante-icon.svg'
+import logoGustavo from '../../../../assets/icons/header-gustavo-dante-icon.svg'
 import { useState } from 'react'
 
 export function NavBar() {
@@ -19,8 +19,8 @@ export function NavBar() {
       </div>
       <NavBarContent>
         <a onClick={() => scrollTo('about-me')}>Sobre mim</a>
-        <a onClick={() => scrollTo('about-me')}>Skills</a>
-        <a onClick={() => scrollTo('about-me')}>Projetos</a>
+        <a onClick={() => scrollTo('my-skills')}>Skills</a>
+        <a onClick={() => scrollTo('my-projects')}>Projetos</a>
         <div>
           <a
             onClick={() => {
@@ -31,8 +31,8 @@ export function NavBar() {
           </a>
           <DropdownContent isVisible={isNavVisible}>
             <a onClick={() => scrollTo('about-me')}>Sobre mim</a>
-            <a onClick={() => scrollTo('about-me')}>Skills</a>
-            <a onClick={() => scrollTo('about-me')}>Projetos</a>
+            <a onClick={() => scrollTo('my-skills')}>Skills</a>
+            <a onClick={() => scrollTo('my-projects')}>Projetos</a>
           </DropdownContent>
         </div>
       </NavBarContent>

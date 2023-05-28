@@ -64,12 +64,22 @@ export const TechnologieWithOverlay = styled.div`
     justify-content: center;
     align-items: center;
     color: #fff;
-    text-align: center;
 
     & > h3 {
+      text-align: center;
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: ${(props) => props.theme['green-300']};
+    }
+
+    & > p {
+      text-align: justify;
+      & > span {
+        color: ${(props) => props.theme['green-300']};
+        text-align: center;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
     }
   }
 

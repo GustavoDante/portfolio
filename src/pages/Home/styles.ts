@@ -136,3 +136,60 @@ export const PortfolioContainer = styled.div`
     }
   }
 `
+
+export const FeedbacksContainer = styled.div`
+  & > h1 {
+    position: flex;
+    display: flex;
+    margin: 2rem 0 4rem 0;
+    align-items: center;
+    color: ${(props) => props.theme.black};
+
+    ::before {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      width: calc(100% - 5rem);
+      height: 3rem;
+      background-color: ${(props) => props.theme['green-300']};
+      border-radius: 1rem 0 0 1rem;
+
+      @media screen and (max-width: 1050px) {
+        width: calc(100% - 3rem);
+      }
+
+      @media screen and (max-width: 675px) {
+        width: calc(100% - 2rem);
+      }
+    }
+  }
+`
+
+interface ScrollToTopButtonProps {
+  show: boolean
+}
+export const ScrollToTopButton = styled.button<ScrollToTopButtonProps>`
+  display: flex;
+  position: fixed;
+  visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+  bottom: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+
+  background-color: ${(props) => props.theme['green-300']};
+
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  justify-content: center;
+  align-items: center;
+
+  & > img {
+    width: 80%;
+  }
+`
