@@ -14,6 +14,12 @@ export const FeedBackupsPanelContainer = styled.div`
     width: 30rem;
     border-radius: 1rem;
 
+    transition: transform 0.5s ease;
+
+    :hover {
+      transform: scale(1.05);
+    }
+
     > h3 {
       color: ${(props) => props.theme['green-300']};
       margin-bottom: 1rem;

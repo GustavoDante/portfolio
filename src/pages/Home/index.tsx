@@ -45,10 +45,14 @@ export function Home() {
       <AboutMeContainer>
         <h1 id="about-me">Sobre mim</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. Nisl sit vel varius gravida
-          sit amet hac. A ut aenean lorem facilisis. Vel laoreet netus congue
-          elementum tortor semper gravida. Vitae consequat magna lectus
-          hendrerit nec bibendum auctor ultrices in
+          Sou atualmente um desenvolvedor full-stack e tenho uma participação
+          ativa em todas as etapas do desenvolvimento de software. Desde o
+          planejamento das tecnologias até o deploy na nuvem e realização de
+          testes. Tenho um forte desejo de aprender e adoro trabalhar em equipe,
+          sempre focado em produzir código legível e organizado. Sou uma pessoa
+          tranquila e apaixonada por lógica de programação, constantemente
+          atento às novidades da minha área e tecnologias que possam melhorar
+          minha produtividade e a qualidade dos projetos em que estou envolvido.
         </p>
         <ContactButtonsContainer>
           <a

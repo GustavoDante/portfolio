@@ -88,10 +88,10 @@ export const TechnologieWithOverlay = styled.div`
     & > div {
       visibility: visible;
       z-index: 1;
-      animation: size-transition 0.3s ease forwards;
+      animation: size-transition 0.5s ease forwards;
 
       @media screen and (max-width: 1140px) {
-        animation: size-transition-for-mobile 0.3s ease forwards;
+        animation: size-transition-for-mobile 0.5s ease forwards;
       }
     }
     & > img {

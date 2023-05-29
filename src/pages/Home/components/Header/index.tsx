@@ -15,9 +15,9 @@ export function Header() {
     <HeaderContainer>
       <div>
         <IntroductionContainer>
-          <strong>Fullstack Developer</strong>
+          <strong>Software Developer</strong>
           <h1>Gustavo Dante</h1>
-          <span>Lorem ipsum dolor sit amet consectetur. Dui ut.</span>
+          <span>Criando experiências digitais excepcionais.</span>
           <ContactButtonsContainer>
             <a
               href="https://github.com/GustavoDante"

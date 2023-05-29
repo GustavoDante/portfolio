@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import project1 from '../../../../assets/projects/project1.png'
+import calcbet from '../../../../assets/projects/calcbet.png'
 import { PortfolioPanelContainer, ProjectContainer } from './styles'
 
 export function PortfolioPanel() {
@@ -80,13 +81,18 @@ export function PortfolioPanel() {
           onMouseEnter={handleMouseUpEnter}
           onMouseLeave={handleMouseUpLeave}
         >
-          <a href="#">
-            <img src={project1} alt="project 1" />
+          <a
+            href="https://calcbet.gustavodante.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={calcbet} alt="project 1" />
             <div>
-              <h3>Project 1</h3>
+              <h3>CalcBet</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, voluptatum.
+                Projeto desenvolvido para o cálculo e registro de apostas
+                esportivas. Utilizei ReactJS, TypeScript, integração com o
+                Firebase, Styled Components e entre outros.
               </p>
             </div>
           </a>

@@ -189,6 +189,12 @@ export const ScrollToTopButton = styled.button<ScrollToTopButtonProps>`
   justify-content: center;
   align-items: center;
 
+  transition: transform 0.5s ease;
+
+  :hover {
+    transform: scale(1.1);
+  }
+
   & > img {
     width: 80%;
   }
