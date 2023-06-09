@@ -7,11 +7,11 @@ export function PortfolioPanel() {
   const [heightProject1, setHeightProject1] = useState('100%')
   const [heightProject2, setHeightProject2] = useState('100%')
 
-  const [heightProject3, setHeightProject3] = useState('100%')
-  const [heightProject4, setHeightProject4] = useState('100%')
+  //   const [heightProject3, setHeightProject3] = useState('100%')
+  //   const [heightProject4, setHeightProject4] = useState('100%')
 
-  const [heightProject5, setHeightProject5] = useState('100%')
-  const [heightProject6, setHeightProject6] = useState('100%')
+  //   const [heightProject5, setHeightProject5] = useState('100%')
+  //   const [heightProject6, setHeightProject6] = useState('100%')
 
   const handleMouseUpEnter = () => {
     setHeightProject1('125%')
@@ -33,45 +33,45 @@ export function PortfolioPanel() {
     setHeightProject2('100%')
   }
 
-  const handleMouseUpEnter2 = () => {
-    setHeightProject3('125%')
-    setHeightProject4('75%')
-  }
+  //   const handleMouseUpEnter2 = () => {
+  //     setHeightProject3('125%')
+  //     setHeightProject4('75%')
+  //   }
 
-  const handleMouseUpLeave2 = () => {
-    setHeightProject3('100%')
-    setHeightProject4('100%')
-  }
+  //   const handleMouseUpLeave2 = () => {
+  //     setHeightProject3('100%')
+  //     setHeightProject4('100%')
+  //   }
 
-  const handleMouseDownEnter2 = () => {
-    setHeightProject3('75%')
-    setHeightProject4('125%')
-  }
+  //   const handleMouseDownEnter2 = () => {
+  //     setHeightProject3('75%')
+  //     setHeightProject4('125%')
+  //   }
 
-  const handleMouseDownLeave2 = () => {
-    setHeightProject3('100%')
-    setHeightProject4('100%')
-  }
+  //   const handleMouseDownLeave2 = () => {
+  //     setHeightProject3('100%')
+  //     setHeightProject4('100%')
+  //   }
 
-  const handleMouseUpEnter3 = () => {
-    setHeightProject5('125%')
-    setHeightProject6('75%')
-  }
+  //   const handleMouseUpEnter3 = () => {
+  //     setHeightProject5('125%')
+  //     setHeightProject6('75%')
+  //   }
 
-  const handleMouseUpLeave3 = () => {
-    setHeightProject5('100%')
-    setHeightProject6('100%')
-  }
+  //   const handleMouseUpLeave3 = () => {
+  //     setHeightProject5('100%')
+  //     setHeightProject6('100%')
+  //   }
 
-  const handleMouseDownEnter3 = () => {
-    setHeightProject5('75%')
-    setHeightProject6('125%')
-  }
+  //   const handleMouseDownEnter3 = () => {
+  //     setHeightProject5('75%')
+  //     setHeightProject6('125%')
+  //   }
 
-  const handleMouseDownLeave3 = () => {
-    setHeightProject5('100%')
-    setHeightProject6('100%')
-  }
+  //   const handleMouseDownLeave3 = () => {
+  //     setHeightProject5('100%')
+  //     setHeightProject6('100%')
+  //   }
 
   return (
     <PortfolioPanelContainer>
@@ -114,7 +114,7 @@ export function PortfolioPanel() {
           </a>
         </ProjectContainer>
       </div>
-      <div>
+      {/* <div>
         <ProjectContainer
           height={heightProject3}
           onMouseEnter={handleMouseUpEnter2}
@@ -181,7 +181,7 @@ export function PortfolioPanel() {
             </div>
           </a>
         </ProjectContainer>
-      </div>
+      </div> */}
     </PortfolioPanelContainer>
   )
 }

@@ -19,7 +19,7 @@ export function FeedBackupsPanel() {
           conhecimentos na área do desenvolvimento.
         </p>
       </div>
-      <div>
+      {/* <div>
         <h3>Arthur Brito (UX/UI Designer | Product Designer)</h3>
         <p>
           Um profissional muito habilidoso, que sabe trabalhar colaborativamente
@@ -42,7 +42,7 @@ export function FeedBackupsPanel() {
           com o time e que sempre está buscando aprender e evoluir os seus
           conhecimentos na área do desenvolvimento.
         </p>
-      </div>
+      </div> */}
     </FeedBackupsPanelContainer>
   )
 }
