@@ -14,7 +14,7 @@ export const CardExperience = styled.div`
   padding: 3rem;
   width: 75%;
   border-radius: 1rem;
-
+  cursor: default;
   transition: transform 0.5s ease;
 
   :hover {

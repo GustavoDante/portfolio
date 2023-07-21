@@ -1,6 +1,6 @@
 import { FeedBackupsPanelContainer } from './styles'
 
-export function FeedBackupsPanel() {
+export function FeedBackPanel() {
   return (
     <FeedBackupsPanelContainer>
       <a

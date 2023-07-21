@@ -14,7 +14,7 @@ import {
 import Curriculum from '../../assets/files/curriculo.pdf'
 import { TechnologiesPanel } from './components/TechnologiesPanel'
 import { PortfolioPanel } from './components/PortfolioPanel'
-import { FeedBackupsPanel } from './components/FeedBackupsPanel'
+import { FeedBackPanel } from './components/FeedBackPanel'
 import { useEffect, useState } from 'react'
 import ArrowUp from '../../assets/icons/arrow-up.svg'
 import { Footer } from './components/Footer'
@@ -89,7 +89,7 @@ export function Home() {
       </PortfolioContainer>
       <FeedbacksContainer>
         <h1 id="feedbacks">Recomendações</h1>
-        <FeedBackupsPanel />
+        <FeedBackPanel />
       </FeedbacksContainer>
       <Footer />
       <ScrollToTopButton show={isVisible} onClick={scrollToTop}>

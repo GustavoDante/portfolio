@@ -5,7 +5,7 @@ export function ExperiencePanel() {
     <ExperiencePanelContainer>
       <CardExperience>
         <div>
-          <h3>Estágio Desenvolvedor FUllStack</h3>
+          <h3>Estágio Desenvolvedor FullStack</h3>
           <span>Softmakers Br</span>
         </div>
         <span>Jul - 2022 / Hoje</span>
@@ -20,12 +20,11 @@ export function ExperiencePanel() {
           buscando soluções rápidas e eficazes para garantir a satisfação do
           cliente. Utilizei nos projetos os banco de dados PostgreSQL e MySQL.
         </p>
-        <div></div>
       </CardExperience>
 
       <CardExperience>
         <div>
-          <h3>Estágio Desenvolvedor FUllStack</h3>
+          <h3>Estágio Desenvolvedor FullStack</h3>
           <span>Softmakers Br</span>
         </div>
         <span>Sep - 2021 / Jun - 2022</span>

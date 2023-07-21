@@ -57,6 +57,7 @@ export const DropdownContent = styled.div<DropdownProps>`
 `
 
 export const NavBarContent = styled.nav`
+  font-weight: 600;
   & > div {
     display: none;
     font-size: 1.5rem;
