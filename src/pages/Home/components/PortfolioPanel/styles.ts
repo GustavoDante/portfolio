@@ -3,108 +3,95 @@ import styled from 'styled-components'
 export const PortfolioPanelContainer = styled.div`
   display: flex;
   justify-content: center;
+  gap: 2rem;
 
-  > div {
-    display: block;
-    width: 25rem;
-
-    height: auto;
-    justify-content: center;
-    margin: 1rem;
-
-    > div + div {
-      align-items: end;
-    }
+  @media screen and (max-width: 1275px) {
+    flex-direction: column;
   }
+
   @media screen and (max-width: 840px) {
     display: block;
     width: 100%;
-
-    > div {
-      display: flex;
-      width: 100%;
-      margin: 0;
-      gap: 2rem;
-    }
-  }
-
-  @media screen and (max-width: 475px) {
-    > div {
-      display: block;
-    }
   }
 `
 
-interface ProjectContainerProps {
-  height: string
-}
-
-export const ProjectContainer = styled.div<ProjectContainerProps>`
-  width: 25rem;
+export const ProjectContainer = styled.div`
+  width: 50%;
   height: 25rem;
   margin: 2rem 0;
   display: flex;
   justify-content: baseline;
 
+  transition: transform 0.5s ease;
+
   & > a {
-    display: block;
+    display: flex;
     position: relative;
-    height: ${(props) => props.height};
+    background-color: ${(props) => props.theme['gray-700']};
+    border-radius: 1rem;
+
+    height: 100%;
     width: 100%;
 
     transition: height 0.5s ease;
 
-    & > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 1rem;
-      box-shadow: 0 0 5px ${(props) => props.theme['gray-700']};
-    }
-
     & > div {
-      visibility: hidden;
-      position: absolute;
       width: 100%;
-      bottom: 0;
-      padding: 1rem 2rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      & > h3 {
-        color: ${(props) => props.theme['gray-100']};
-        margin-bottom: 0.5rem;
-        font-size: 1.5rem;
-      }
-
-      & > p {
-        color: ${(props) => props.theme['gray-300']};
-        font-size: 1rem;
-      }
-    }
-
-    :hover {
-      & > div {
-        visibility: visible;
-      }
       & > img {
-        filter: brightness(0.3);
+        object-fit: contain;
+        border-radius: 1rem;
+
+        :first-child {
+          width: 30%;
+          max-height: 100%;
+        }
+
+        :last-child {
+          width: 70%;
+          max-height: 100%;
+          margin-right: 0.2rem;
+        }
+      }
+      @media screen and (max-width: 510px) {
+        flex-direction: column;
       }
     }
   }
 
-  @media screen and (max-width: 1440px) {
-    width: 20rem;
+  &:hover {
+    transform: scale(1.05);
   }
-
-  @media screen and (max-width: 1140px) {
-    width: 15rem;
-  }
-
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 1275px) {
     width: 100%;
+  }
+  @media screen and (max-width: 450px) {
+    height: 22rem;
+  }
+  @media screen and (max-width: 370px) {
+    height: 18rem;
+  }
+`
 
-    & > a {
-      height: 100%;
-    }
+export const BackDrop = styled.div`
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+
+  & > h3 {
+    color: ${(props) => props.theme['gray-100']};
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  & > p {
+    color: ${(props) => props.theme['gray-300']};
+    font-size: 1rem;
   }
 `

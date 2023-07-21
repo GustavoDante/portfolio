@@ -3,15 +3,23 @@ import { FeedBackupsPanelContainer } from './styles'
 export function FeedBackupsPanel() {
   return (
     <FeedBackupsPanelContainer>
-      <div>
+      <a
+        href="https://www.linkedin.com/in/arthur-brito-24619b177/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <h3>Arthur Brito (UX/UI Designer | Product Designer)</h3>
         <p>
           Um profissional muito habilidoso, que sabe trabalhar colaborativamente
           com o time e que sempre está buscando aprender e evoluir os seus
           conhecimentos na área do desenvolvimento.
         </p>
-      </div>
-      <div>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/luis-manoel-6ba027122/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <h3>Luis Manoel (Desenvolvedor Web FullStack)</h3>
         <p>
           Excelente profissional e colega de trabalho, sempre disposto a ajudar
@@ -22,31 +30,7 @@ export function FeedBackupsPanel() {
           aprender novas tecnologias de forma eficiente, o que o capacita a
           enfrentar com sucesso novos desafios.
         </p>
-      </div>
-      {/* <div>
-        <h3>Arthur Brito (UX/UI Designer | Product Designer)</h3>
-        <p>
-          Um profissional muito habilidoso, que sabe trabalhar colaborativamente
-          com o time e que sempre está buscando aprender e evoluir os seus
-          conhecimentos na área do desenvolvimento.
-        </p>
-      </div>
-      <div>
-        <h3>Arthur Brito (UX/UI Designer | Product Designer)</h3>
-        <p>
-          Um profissional muito habilidoso, que sabe trabalhar colaborativamente
-          com o time e que sempre está buscando aprender e evoluir os seus
-          conhecimentos na área do desenvolvimento.
-        </p>
-      </div>
-      <div>
-        <h3>Arthur Brito (UX/UI Designer | Product Designer)</h3>
-        <p>
-          Um profissional muito habilidoso, que sabe trabalhar colaborativamente
-          com o time e que sempre está buscando aprender e evoluir os seus
-          conhecimentos na área do desenvolvimento.
-        </p>
-      </div> */}
+      </a>
     </FeedBackupsPanelContainer>
   )
 }

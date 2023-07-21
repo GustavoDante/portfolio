@@ -2,6 +2,8 @@ import { Header } from './components/Header'
 import { ContactButtonsContainer } from './components/Header/styles'
 import {
   AboutMeContainer,
+  DegreePanelContainer,
+  ExperiencePanelContainer,
   FeedbacksContainer,
   HomeContainer,
   PortfolioContainer,
@@ -16,6 +18,8 @@ import { FeedBackupsPanel } from './components/FeedBackupsPanel'
 import { useEffect, useState } from 'react'
 import ArrowUp from '../../assets/icons/arrow-up.svg'
 import { Footer } from './components/Footer'
+import { ExperiencePanel } from './components/ExperiencePanel'
+import { DegreePanel } from './components/DegreePanel/intex'
 
 export function Home() {
   const [isVisible, setIsVisible] = useState(false)
@@ -71,12 +75,20 @@ export function Home() {
         <h1 id="my-skills">Minhas Skills</h1>
         <TechnologiesPanel />
       </SkillsContainer>
+      <ExperiencePanelContainer>
+        <h1 id="my-experience">Experiências profissionais</h1>
+        <ExperiencePanel />
+      </ExperiencePanelContainer>
+      <DegreePanelContainer>
+        <h1 id="my-degree">Certificações</h1>
+        <DegreePanel />
+      </DegreePanelContainer>
       <PortfolioContainer>
         <h1 id="my-projects">Meus Projetos</h1>
         <PortfolioPanel />
       </PortfolioContainer>
       <FeedbacksContainer>
-        <h1 id="feedbacks">Meus Feedbacks</h1>
+        <h1 id="feedbacks">Recomendações</h1>
         <FeedBackupsPanel />
       </FeedbacksContainer>
       <Footer />

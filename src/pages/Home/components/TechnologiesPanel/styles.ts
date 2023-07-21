@@ -21,10 +21,14 @@ export const TecnologiesContainer = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(4, 1fr));
   }
 
-  @media screen and (max-width: 400px) {
-    grid-template-columns: repeat(auto-fit, minmax(2, 1fr));
+  @media screen and (max-width: 450px) {
+    grid-template-columns: repeat(2, 1fr);
     padding: 1rem 0;
     grid-gap: 0rem;
+  }
+
+  @media screen and (max-width: 300px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 
@@ -50,7 +54,7 @@ export const TechnologieWithOverlay = styled.div`
 
   & > div {
     width: 100%;
-    height: 100%;
+    height: 0px;
     border-radius: 1rem;
     box-shadow: 0 0 5px ${(props) => props.theme['gray-700']};
     padding: 1rem 2rem 1rem 4rem;
@@ -86,12 +90,12 @@ export const TechnologieWithOverlay = styled.div`
   &:hover {
     overflow: visible;
     & > div {
-      visibility: visible;
+      /* visibility: visible; */
       z-index: 1;
-      animation: size-transition 0.5s ease forwards;
+      animation: size-transition 0.3s ease forwards;
 
       @media screen and (max-width: 1140px) {
-        animation: size-transition-for-mobile 0.5s ease forwards;
+        animation: size-transition-for-mobile 0.3s ease forwards;
       }
     }
     & > img {
@@ -101,10 +105,12 @@ export const TechnologieWithOverlay = styled.div`
 
   @keyframes size-transition {
     0% {
+      visibility: hidden;
       width: 100%;
-      height: 100%;
+      height: 0px;
     }
     100% {
+      visibility: visible;
       width: 25rem;
       height: auto;
     }

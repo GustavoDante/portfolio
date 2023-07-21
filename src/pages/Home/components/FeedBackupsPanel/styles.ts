@@ -8,11 +8,12 @@ export const FeedBackupsPanelContainer = styled.div`
   justify-content: center;
   gap: 1rem;
 
-  > div {
+  > a {
     background-color: ${(props) => props.theme['gray-700']};
     padding: 3rem;
     width: 30rem;
     border-radius: 1rem;
+    text-decoration: none;
 
     transition: transform 0.5s ease;
 
@@ -25,18 +26,19 @@ export const FeedBackupsPanelContainer = styled.div`
       margin-bottom: 1rem;
     }
 
+    > p {
+      color: ${(props) => props.theme['gray-100']};
+    }
+
     @media screen and (max-width: 1275px) {
       width: 23rem;
     }
 
     @media screen and (max-width: 900px) {
-      width: 15rem;
-      padding: 2.5rem;
-    }
-
-    @media screen and (max-width: 610px) {
       width: 100%;
-      padding: 2rem;
     }
+  }
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
   }
 `

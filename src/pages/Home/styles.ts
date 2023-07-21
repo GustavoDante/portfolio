@@ -11,7 +11,7 @@ export const AboutMeContainer = styled.div`
   & > h1 {
     display: flex;
     align-items: center;
-    margin: 2rem 0 2rem 0;
+    margin: 4rem 0;
 
     ::before {
       content: '';
@@ -59,8 +59,12 @@ export const SkillsContainer = styled.div`
   & > h1 {
     display: flex;
     align-items: center;
-    margin: 2rem 0 2rem 0;
+    margin: 4rem 0;
     overflow: hidden;
+
+    @media screen and (max-width: 1050px) {
+      font-size: 1.3rem;
+    }
 
     ::before {
       content: '';
@@ -72,13 +76,8 @@ export const SkillsContainer = styled.div`
       background-color: ${(props) => props.theme['green-300']};
 
       @media screen and (max-width: 1050px) {
-        left: 18rem;
-        width: calc(100% - 18rem);
-      }
-
-      @media screen and (max-width: 675px) {
-        left: 17rem;
-        width: calc(100% - 17rem);
+        left: 12rem;
+        width: calc(100% - 12rem);
       }
     }
     ::after {
@@ -93,11 +92,7 @@ export const SkillsContainer = styled.div`
       background-color: ${(props) => props.theme['green-300']};
 
       @media screen and (max-width: 1050px) {
-        left: 18rem;
-      }
-
-      @media screen and (max-width: 675px) {
-        left: 17rem;
+        left: 12rem;
       }
     }
   }
@@ -105,45 +100,20 @@ export const SkillsContainer = styled.div`
 
 export const PortfolioContainer = styled.div`
   & > h1 {
-    position: flex;
     display: flex;
-    margin: 2rem 0 2rem 0;
     align-items: center;
-    color: ${(props) => props.theme.black};
 
-    ::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      z-index: -1;
-      width: 24rem;
-      height: 3rem;
-      background-color: ${(props) => props.theme['green-300']};
-      border-radius: 0 1rem 1rem 0;
+    margin: 4rem 0;
+    height: 3rem;
 
-      @media screen and (max-width: 1050px) {
-        width: 19rem;
-      }
+    color: ${(props) => props.theme['gray-300']};
+    background-color: ${(props) => props.theme['blue-900']};
+    width: max-content;
+    padding: 0 1rem;
 
-      @media screen and (max-width: 675px) {
-        width: 18rem;
-      }
-
-      @media screen and (max-width: 400px) {
-        width: 100%;
-      }
+    @media screen and (max-width: 1050px) {
+      font-size: 1.3rem;
     }
-  }
-`
-
-export const FeedbacksContainer = styled.div`
-  & > h1 {
-    position: flex;
-    display: flex;
-    margin: 2rem 0 4rem 0;
-    align-items: center;
-    color: ${(props) => props.theme.black};
 
     ::before {
       content: '';
@@ -151,8 +121,8 @@ export const FeedbacksContainer = styled.div`
       position: absolute;
       right: 0;
       z-index: -1;
-      width: calc(100% - 5rem);
-      height: 3rem;
+      width: 100%;
+      height: 0.1rem;
       background-color: ${(props) => props.theme['green-300']};
       border-radius: 1rem 0 0 1rem;
 
@@ -163,6 +133,117 @@ export const FeedbacksContainer = styled.div`
       @media screen and (max-width: 675px) {
         width: calc(100% - 2rem);
       }
+    }
+  }
+`
+
+export const FeedbacksContainer = styled.div`
+  & > h1 {
+    display: flex;
+    align-items: center;
+
+    margin: 4rem 0;
+    height: 3rem;
+
+    color: ${(props) => props.theme['gray-300']};
+    background-color: ${(props) => props.theme['blue-900']};
+    width: max-content;
+    padding: 0 1rem;
+
+    @media screen and (max-width: 1050px) {
+      font-size: 1.3rem;
+    }
+
+    ::before {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      width: 100%;
+      height: 0.1rem;
+      background-color: ${(props) => props.theme['green-300']};
+      border-radius: 1rem 0 0 1rem;
+
+      @media screen and (max-width: 1050px) {
+        width: calc(100% - 3rem);
+      }
+
+      @media screen and (max-width: 675px) {
+        width: calc(100% - 2rem);
+      }
+    }
+  }
+`
+
+export const ExperiencePanelContainer = styled.div`
+  > h1 {
+    position: flex;
+    display: flex;
+    margin: 4rem 0;
+    align-items: center;
+    color: ${(props) => props.theme.black};
+
+    @media screen and (max-width: 1050px) {
+      font-size: 1.3rem;
+    }
+
+    ::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      width: 35rem;
+      height: 3rem;
+      background-color: ${(props) => props.theme['green-300']};
+      border-radius: 0 1rem 1rem 0;
+
+      @media screen and (max-width: 1050px) {
+        width: 23rem;
+      }
+
+      @media screen and (max-width: 675px) {
+        width: 21rem;
+      }
+
+      @media screen and (max-width: 400px) {
+        width: 100%;
+      }
+    }
+  }
+`
+
+export const DegreePanelContainer = styled.div`
+  & > h1 {
+    display: flex;
+    margin: 4rem 0;
+    height: 3rem;
+    align-items: center;
+    color: ${(props) => props.theme.black};
+
+    @media screen and (max-width: 1050px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  ::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    width: calc(100% - 5rem);
+    height: 3rem;
+    background-color: ${(props) => props.theme['green-300']};
+    border-radius: 1rem 0 0 1rem;
+
+    @media screen and (max-width: 1050px) {
+      width: calc(100% - 3rem);
+    }
+
+    @media screen and (max-width: 675px) {
+      width: calc(100% - 2rem);
     }
   }
 `
