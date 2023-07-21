@@ -33,9 +33,9 @@ export const ProjectContainer = styled.div`
     height: 100%;
     width: 100%;
 
-    transition: height 0.5s ease;
+    transition: all 0.5s ease;
 
-    & > div {
+    & > div:first-child {
       width: 100%;
       display: flex;
       align-items: center;
@@ -60,6 +60,15 @@ export const ProjectContainer = styled.div`
         flex-direction: column;
       }
     }
+    :hover {
+      & > div:last-child {
+        visibility: visible;
+      }
+      & > div:first-child {
+        filter: brightness(0.3);
+      }
+      background-color: ${(props) => props.theme['gray-900']};
+    }
   }
 
   &:hover {
@@ -78,11 +87,15 @@ export const ProjectContainer = styled.div`
 
 export const BackDrop = styled.div`
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
   position: absolute;
+  height: 100%;
   width: 100%;
   bottom: 0;
   padding: 1rem 2rem;
-  text-align: center;
 
   & > h3 {
     color: ${(props) => props.theme['gray-100']};

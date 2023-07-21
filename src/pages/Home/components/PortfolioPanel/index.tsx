@@ -38,8 +38,9 @@ export function PortfolioPanel() {
           <BackDrop>
             <h3>WatchGather</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              voluptatum.
+              Projeto desenvolvido para achar filmes e séries para assistir
+              utilizando a API do The Movie Database. Utilizei NextJs,
+              TypeScript, TailwindCss e entre outros.
             </p>
           </BackDrop>
         </a>
