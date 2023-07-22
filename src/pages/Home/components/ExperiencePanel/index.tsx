@@ -5,7 +5,7 @@ export function ExperiencePanel() {
     <ExperiencePanelContainer>
       <CardExperience>
         <div>
-          <h3>Estágio Desenvolvedor FullStack</h3>
+          <h3>Desenvolvedor FullStack Júnior</h3>
           <span>Softmakers Br</span>
         </div>
         <span>Jul - 2022 / Hoje</span>

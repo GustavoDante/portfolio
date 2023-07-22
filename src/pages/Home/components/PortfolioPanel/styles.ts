@@ -98,13 +98,13 @@ export const BackDrop = styled.div`
   padding: 1rem 2rem;
 
   & > h3 {
-    color: ${(props) => props.theme['gray-100']};
+    color: ${(props) => props.theme['green-300']};
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
   }
 
   & > p {
-    color: ${(props) => props.theme['gray-300']};
+    color: ${(props) => props.theme['gray-100']};
     font-size: 1rem;
   }
 `

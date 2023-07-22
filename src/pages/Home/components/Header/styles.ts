@@ -138,8 +138,10 @@ export const PhotoContainer = styled.div`
         width: 2rem;
         filter: brightness(0) invert(1);
 
+        animation: pulse 1s ease-in-out infinite;
+
         @media screen and (max-width: 400px) {
-          width: 1rem;
+          width: 1.3rem;
         }
       }
     }
@@ -159,6 +161,16 @@ export const PhotoContainer = styled.div`
     @media screen and (max-width: 400px) {
       width: 15rem;
       height: 14rem;
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.5rem);
     }
   }
 `

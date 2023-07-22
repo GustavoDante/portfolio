@@ -18,9 +18,9 @@ export function NavBar() {
         <img src={logoGustavo} alt="simbolo beta azul" />
       </div>
       <NavBarContent>
-        <a onClick={() => scrollTo('about-me')}>Sobre mim</a>
         <a onClick={() => scrollTo('my-skills')}>Skills</a>
-        <a onClick={() => scrollTo('my-projects')}>Projetos</a>
+        <a onClick={() => scrollTo('my-experience')}>Experiências</a>
+        <a onClick={() => scrollTo('my-degree')}>Certificações</a>
         <div>
           <a
             onClick={() => {
@@ -30,9 +30,9 @@ export function NavBar() {
             &#9776;
           </a>
           <DropdownContent isVisible={isNavVisible}>
-            <a onClick={() => scrollTo('about-me')}>Sobre mim</a>
             <a onClick={() => scrollTo('my-skills')}>Skills</a>
-            <a onClick={() => scrollTo('my-projects')}>Projetos</a>
+            <a onClick={() => scrollTo('my-experience')}>Experiências</a>
+            <a onClick={() => scrollTo('my-degree')}>Certificações</a>
           </DropdownContent>
         </div>
       </NavBarContent>
