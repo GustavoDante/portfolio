@@ -12,6 +12,10 @@ import htmlIcon from '../../../../assets/icons/html-icon.svg'
 import cssIcon from '../../../../assets/icons/css-icon.svg'
 import apiIcon from '../../../../assets/icons/api-icon.svg'
 import jqueryIcon from '../../../../assets/icons/jquery-icon.svg'
+import googleCloudIcon from '../../../../assets/icons/google-icon.svg'
+import awsIcon from '../../../../assets/icons/aws-icon.svg'
+import styledComponentsIcon from '../../../../assets/icons/styled-components-icon.svg'
+import dockerIcon from '../../../../assets/icons/docker-icon.svg'
 import { TechnologieWithOverlay, TecnologiesContainer } from './styles'
 
 export function TechnologiesPanel() {
@@ -136,7 +140,7 @@ export function TechnologiesPanel() {
         <div>
           <h3>Next.js</h3>
           <p>
-            <span>6 meses de experiência</span>
+            <span>1 ano de experiência</span>
             Next.js é um framework React para criação de aplicativos web
             renderizados no servidor. Ele oferece suporte a renderização do lado
             do servidor (SSR) e geração estática, otimização de desempenho,
@@ -204,6 +208,21 @@ export function TechnologiesPanel() {
         <div>
           <h3>jQuery</h3>
           <p>
+            <span>2 anos de experiência</span>
+            jQuery é uma biblioteca JavaScript popular que simplifica a
+            manipulação do DOM, a animação, o gerenciamento de eventos e a
+            realização de requisições AJAX em uma página da web. Ele fornece uma
+            sintaxe simplificada e compatibilidade com vários navegadores,
+            facilitando o desenvolvimento de recursos interativos e dinâmicos em
+            websites.
+          </p>
+        </div>
+      </TechnologieWithOverlay>
+      <TechnologieWithOverlay>
+        <img src={googleCloudIcon} alt="google cloud icon" />
+        <div>
+          <h3>Google Cloud</h3>
+          <p>
             <span>1 ano de experiência</span>
             jQuery é uma biblioteca JavaScript popular que simplifica a
             manipulação do DOM, a animação, o gerenciamento de eventos e a
@@ -211,6 +230,50 @@ export function TechnologiesPanel() {
             sintaxe simplificada e compatibilidade com vários navegadores,
             facilitando o desenvolvimento de recursos interativos e dinâmicos em
             websites.
+          </p>
+        </div>
+      </TechnologieWithOverlay>
+      <TechnologieWithOverlay>
+        <img src={awsIcon} alt="aws icon" />
+        <div>
+          <h3>AWS</h3>
+          <p>
+            <span>1 ano de experiência</span>
+            AWS é uma plataforma de computação em nuvem fornecida pela Amazon.
+            Ela oferece uma ampla gama de serviços, como computação,
+            armazenamento, banco de dados, aprendizado de máquina e muito mais.
+            Empresas e desenvolvedores podem usar a AWS para hospedar, gerenciar
+            e dimensionar aplicativos e serviços de forma flexível e segura.
+          </p>
+        </div>
+      </TechnologieWithOverlay>
+      <TechnologieWithOverlay>
+        <img src={styledComponentsIcon} alt="styled components icon" />
+        <div>
+          <h3>Styled Components</h3>
+          <p>
+            <span>2 anos de experiência</span>
+            Styled Components é uma biblioteca de estilização para React e
+            outras bibliotecas JavaScript. Permite escrever estilos CSS de forma
+            mais modular e coesa, criando componentes com estilos encapsulados.
+            Os estilos são definidos usando a sintaxe do CSS-in-JS, facilitando
+            a criação de interfaces reutilizáveis e mais fáceis de manter.
+          </p>
+        </div>
+      </TechnologieWithOverlay>
+      <TechnologieWithOverlay>
+        <img src={dockerIcon} alt="docker icon" />
+        <div>
+          <h3>Docker</h3>
+          <p>
+            <span>1 ano de experiência</span>
+            Docker é uma plataforma de código aberto que permite criar,
+            implantar e executar aplicativos em contêineres. Os contêineres são
+            unidades isoladas e leves que contêm todo o necessário para executar
+            um aplicativo, incluindo código, bibliotecas e dependências. Eles
+            permitem que os aplicativos sejam executados consistentemente em
+            qualquer ambiente, simplificando o processo de desenvolvimento e
+            implantação.
           </p>
         </div>
       </TechnologieWithOverlay>
