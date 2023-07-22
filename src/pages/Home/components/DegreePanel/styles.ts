@@ -14,9 +14,15 @@ export const DegreePanelContainer = styled.div`
     text-decoration: none;
     border-radius: 1rem;
 
+    transition: transform 0.5s ease;
+
     > img {
       width: 100%;
       border-radius: 1rem;
+    }
+
+    :hover {
+      transform: scale(1.05);
     }
 
     @media screen and (max-width: 675px) {

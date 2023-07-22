@@ -15,11 +15,6 @@ export const CardExperience = styled.div`
   width: 75%;
   border-radius: 1rem;
   cursor: default;
-  transition: transform 0.5s ease;
-
-  :hover {
-    transform: scale(1.05);
-  }
 
   > div {
     display: flex;

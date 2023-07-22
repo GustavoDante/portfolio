@@ -30,7 +30,11 @@ export function PortfolioPanel() {
         </a>
       </ProjectContainer>
       <ProjectContainer>
-        <a href="#">
+        <a
+          href="https://watchgather.gustavodante.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           <div>
             <img src={watchGatherResponsive} alt="project 1" />
             <img src={watchGather} alt="project 1" />
