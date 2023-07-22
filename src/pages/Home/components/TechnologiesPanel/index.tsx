@@ -223,13 +223,13 @@ export function TechnologiesPanel() {
         <div>
           <h3>Google Cloud</h3>
           <p>
-            <span>1 ano de experiência</span>
-            jQuery é uma biblioteca JavaScript popular que simplifica a
-            manipulação do DOM, a animação, o gerenciamento de eventos e a
-            realização de requisições AJAX em uma página da web. Ele fornece uma
-            sintaxe simplificada e compatibilidade com vários navegadores,
-            facilitando o desenvolvimento de recursos interativos e dinâmicos em
-            websites.
+            <span>1 ano de experiência</span>O Google Cloud é uma plataforma de
+            computação em nuvem oferecida pelo Google. Assim como a AWS, o
+            Google Cloud fornece serviços de infraestrutura, armazenamento,
+            análise de dados, aprendizado de máquina e outras soluções baseadas
+            em nuvem. É usado por empresas e desenvolvedores para executar
+            aplicativos, armazenar dados e aproveitar a infraestrutura global do
+            Google.
           </p>
         </div>
       </TechnologieWithOverlay>
