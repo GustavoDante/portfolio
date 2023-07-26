@@ -3,21 +3,27 @@ import TypescriptIcon from '../../../../assets/icons/typescript-icon.svg'
 import ReactIcon from '../../../../assets/icons/react-icon.svg'
 import NodeIcon from '../../../../assets/icons/node-icon.svg'
 import BackgroundHeader from '../../../../assets/backgrounds/header-background.png'
+import Curriculum from '../../../../assets/files/curriculo.pdf'
 import {
   ContactButtonsContainer,
   HeaderContainer,
   IntroductionContainer,
   PhotoContainer,
 } from './styles'
+import { translations } from '../../translations/translations'
+import { LanguageContext } from '../../../../contexts/LanguageContext'
+import { useContext } from 'react'
 
 export function Header() {
+  const { language } = useContext(LanguageContext)
+
   return (
     <HeaderContainer>
       <div>
         <IntroductionContainer>
-          <strong>Software Developer</strong>
+          <strong>{translations[language].header.job}</strong>
           <h1>Gustavo Dante</h1>
-          <span>Criando experiências digitais excepcionais.</span>
+          <span>{translations[language].header.slogan}</span>
           <ContactButtonsContainer>
             <a
               href="https://github.com/GustavoDante"
@@ -26,12 +32,8 @@ export function Header() {
             >
               Github
             </a>
-            <a
-              href="https://www.linkedin.com/in/gustavo-dante-silva-483649212/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Linkedin
+            <a href={Curriculum} target="_blank" rel="noreferrer">
+              {translations[language].header.curriculum}
             </a>
           </ContactButtonsContainer>
         </IntroductionContainer>

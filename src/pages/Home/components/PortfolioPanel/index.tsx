@@ -5,8 +5,12 @@ import watchGather from '../../../../assets/projects/watchgather.png'
 import watchGatherResponsive from '../../../../assets/projects/watchgather-responsive.png'
 
 import { BackDrop, PortfolioPanelContainer, ProjectContainer } from './styles'
+import { useContext } from 'react'
+import { LanguageContext } from '../../../../contexts/LanguageContext'
+import { translations } from '../../translations/translations'
 
 export function PortfolioPanel() {
+  const { language } = useContext(LanguageContext)
   return (
     <PortfolioPanelContainer>
       <ProjectContainer>
@@ -16,16 +20,15 @@ export function PortfolioPanel() {
           rel="noreferrer"
         >
           <div>
-            <img src={calcbetResponsive} alt="project 1" />
-            <img src={calcbet} alt="project 1" />
+            <img
+              src={calcbetResponsive}
+              alt="Imagem ilustrando a plataforma em um smartphone"
+            />
+            <img src={calcbet} alt="Imagem ilustrando a plataforma" />
           </div>
           <BackDrop>
             <h3>CalcBet</h3>
-            <p>
-              Projeto desenvolvido para o cálculo e registro de apostas
-              esportivas. Utilizei ReactJS, TypeScript, integração com o
-              Firebase, Styled Components e entre outros.
-            </p>
+            <p>{translations[language].projects.calcbet.description}</p>
           </BackDrop>
         </a>
       </ProjectContainer>
@@ -36,16 +39,15 @@ export function PortfolioPanel() {
           rel="noreferrer"
         >
           <div>
-            <img src={watchGatherResponsive} alt="project 1" />
-            <img src={watchGather} alt="project 1" />
+            <img
+              src={watchGatherResponsive}
+              alt="Imagem ilustrando a plataforma em um smartphone"
+            />
+            <img src={watchGather} alt="Imagem ilustrando a plataforma" />
           </div>
           <BackDrop>
             <h3>WatchGather</h3>
-            <p>
-              Projeto desenvolvido para achar filmes e séries para assistir
-              utilizando a API do The Movie Database. Utilizei NextJs,
-              TypeScript, TailwindCss e entre outros.
-            </p>
+            <p>{translations[language].projects.watchgather.description}</p>
           </BackDrop>
         </a>
       </ProjectContainer>

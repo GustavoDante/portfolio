@@ -70,8 +70,8 @@ export const SkillsContainer = styled.div`
       content: '';
       display: block;
       position: absolute;
-      left: 23rem;
-      width: calc(100% - 23rem);
+      left: 28rem;
+      width: calc(100% - 28rem);
       height: 0.1rem;
       background-color: ${(props) => props.theme['green-300']};
 
@@ -84,7 +84,7 @@ export const SkillsContainer = styled.div`
       content: '';
       display: block;
       position: absolute;
-      left: 23rem;
+      left: 28rem;
 
       width: 0.5rem;
       height: 0.5rem;

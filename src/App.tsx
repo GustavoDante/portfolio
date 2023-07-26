@@ -4,16 +4,19 @@ import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import { Home } from './pages/Home'
+import { LanguageProvider } from './contexts/LanguageContext'
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<DefaultLayout />}>
-            <Route path="/" element={<Home />} />
-          </Route>
-        </Routes>
+        <LanguageProvider>
+          <Routes>
+            <Route path="/" element={<DefaultLayout />}>
+              <Route path="/" element={<Home />} />
+            </Route>
+          </Routes>
+        </LanguageProvider>
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>
