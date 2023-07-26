@@ -11,10 +11,10 @@ import { Language, LanguageContext } from '../../../../contexts/LanguageContext'
 
 export function NavBar() {
   const [isNavVisible, setIsNavVisible] = useState(false)
-  const { language, setLanguage } = useContext(LanguageContext)
+  const { language, setLanguageAndSave } = useContext(LanguageContext)
 
   function handleSetLanguage(event: React.ChangeEvent<HTMLSelectElement>) {
-    setLanguage(event.target.value as Language)
+    setLanguageAndSave(event.target.value as Language)
   }
 
   function scrollTo(elementId: string) {
