@@ -118,10 +118,12 @@ export const TechnologieWithOverlay = styled.div`
 
   @keyframes size-transition-for-mobile {
     0% {
+      visibility: hidden;
       width: 100%;
       height: 100%;
     }
     100% {
+      visibility: visible;
       width: auto;
       height: auto;
     }
