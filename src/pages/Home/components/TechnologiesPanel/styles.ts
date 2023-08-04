@@ -78,6 +78,7 @@ export const TechnologieWithOverlay = styled.div`
 
     & > p {
       text-align: justify;
+      visibility: hidden;
       & > span {
         color: ${(props) => props.theme['green-300']};
         text-align: center;
@@ -96,6 +97,11 @@ export const TechnologieWithOverlay = styled.div`
 
       @media screen and (max-width: 1140px) {
         animation: size-transition-for-mobile 0.3s ease forwards;
+      }
+
+      & > p {
+        animation: transition-text 0.1s ease forwards;
+        animation-delay: 0.15s;
       }
     }
     & > img {
@@ -126,6 +132,15 @@ export const TechnologieWithOverlay = styled.div`
       visibility: visible;
       width: auto;
       height: auto;
+    }
+  }
+
+  @keyframes transition-text {
+    0% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
     }
   }
 `
