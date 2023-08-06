@@ -150,7 +150,7 @@ export const PhotoContainer = styled.div`
       position: absolute;
       bottom: 0;
       width: 110%;
-      object-fit: cover;
+      image-rendering: optimizeSpeed;
     }
 
     @media screen and (max-width: 850px) {

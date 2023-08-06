@@ -8,7 +8,7 @@ export const DegreePanelContainer = styled.div`
 
   width: 100%;
   > a {
-    width: 50%;
+    width: 35%;
     display: flex;
     justify-content: center;
     text-decoration: none;

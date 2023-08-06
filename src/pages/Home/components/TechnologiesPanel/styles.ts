@@ -86,12 +86,16 @@ export const TechnologieWithOverlay = styled.div`
         margin-bottom: 0.5rem;
       }
     }
+
+    @media screen and (max-width: 550px) {
+      left: unset;
+      padding: 4rem 1rem 2rem 1rem;
+    }
   }
 
   &:hover {
     overflow: visible;
     & > div {
-      /* visibility: visible; */
       z-index: 1;
       animation: size-transition 0.3s ease forwards;
 
@@ -130,7 +134,7 @@ export const TechnologieWithOverlay = styled.div`
     }
     100% {
       visibility: visible;
-      width: auto;
+      width: calc(100% * 2.5);
       height: auto;
     }
   }
