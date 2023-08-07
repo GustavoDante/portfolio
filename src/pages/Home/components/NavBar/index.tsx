@@ -29,13 +29,9 @@ export function NavBar() {
       <div>
         <img src={logoGustavo} alt="simbolo beta azul" />
       </div>
-      <SelectLanguage onChange={handleSetLanguage}>
-        <option value={'en'} selected={language === 'en'}>
-          {translations[language].navbar.english}
-        </option>
-        <option value={'pt'} selected={language === 'pt'}>
-          {translations[language].navbar.portuguese}
-        </option>
+      <SelectLanguage onChange={handleSetLanguage} defaultValue={language}>
+        <option value={'en'}>{translations[language].navbar.english}</option>
+        <option value={'pt'}>{translations[language].navbar.portuguese}</option>
       </SelectLanguage>
       <NavBarContent>
         <a onClick={() => scrollTo('my-skills')}>

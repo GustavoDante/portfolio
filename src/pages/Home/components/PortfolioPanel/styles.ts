@@ -16,8 +16,8 @@ export const PortfolioPanelContainer = styled.div`
 `
 
 export const ProjectContainer = styled.div`
-  width: 50%;
-  height: 25rem;
+  width: 40%;
+  height: auto;
   margin: 2rem 0;
   display: flex;
   justify-content: baseline;
@@ -65,7 +65,7 @@ export const ProjectContainer = styled.div`
         visibility: visible;
       }
       & > div:first-child {
-        filter: brightness(0.3);
+        filter: blur(2px) brightness(0.2);
       }
       background-color: ${(props) => props.theme['gray-900']};
     }
@@ -76,12 +76,6 @@ export const ProjectContainer = styled.div`
   }
   @media screen and (max-width: 1275px) {
     width: 100%;
-  }
-  @media screen and (max-width: 450px) {
-    height: 22rem;
-  }
-  @media screen and (max-width: 370px) {
-    height: 18rem;
   }
 `
 
@@ -104,7 +98,7 @@ export const BackDrop = styled.div`
   }
 
   & > p {
-    color: ${(props) => props.theme['gray-100']};
+    color: ${(props) => props.theme.white};
     font-size: 1rem;
   }
 `
