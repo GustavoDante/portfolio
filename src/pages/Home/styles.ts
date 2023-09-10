@@ -62,10 +62,6 @@ export const SkillsContainer = styled.div`
     margin: 4rem 0;
     overflow: hidden;
 
-    @media screen and (max-width: 1050px) {
-      font-size: 1.3rem;
-    }
-
     ::before {
       content: '';
       display: block;
@@ -76,8 +72,8 @@ export const SkillsContainer = styled.div`
       background-color: ${(props) => props.theme['green-300']};
 
       @media screen and (max-width: 1050px) {
-        left: 12rem;
-        width: calc(100% - 12rem);
+        left: 23rem;
+        width: calc(100% - 23rem);
       }
     }
     ::after {
@@ -92,7 +88,7 @@ export const SkillsContainer = styled.div`
       background-color: ${(props) => props.theme['green-300']};
 
       @media screen and (max-width: 1050px) {
-        left: 12rem;
+        left: 23rem;
       }
     }
   }
