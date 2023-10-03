@@ -29,6 +29,7 @@ export function PortfolioPanel() {
           <BackDrop>
             <h3>CalcBet</h3>
             <p>{translations[language].projects.calcbet.description}</p>
+            <div></div>
           </BackDrop>
         </a>
       </ProjectContainer>
@@ -48,6 +49,7 @@ export function PortfolioPanel() {
           <BackDrop>
             <h3>WatchGather</h3>
             <p>{translations[language].projects.watchgather.description}</p>
+            <div></div>
           </BackDrop>
         </a>
       </ProjectContainer>

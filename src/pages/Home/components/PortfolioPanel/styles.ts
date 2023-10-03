@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const PortfolioPanelContainer = styled.div`
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2rem; */
 
   @media screen and (max-width: 1275px) {
     flex-direction: column;
@@ -16,7 +16,7 @@ export const PortfolioPanelContainer = styled.div`
 `
 
 export const ProjectContainer = styled.div`
-  width: 40%;
+  width: 100%;
   height: auto;
   margin: 2rem 0;
   display: flex;
@@ -26,7 +26,6 @@ export const ProjectContainer = styled.div`
 
   & > a {
     display: flex;
-    position: relative;
     background-color: ${(props) => props.theme['gray-700']};
     border-radius: 1rem;
 
@@ -36,7 +35,8 @@ export const ProjectContainer = styled.div`
     transition: all 0.5s ease;
 
     & > div:first-child {
-      width: 100%;
+      width: 40%;
+      padding: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,39 +60,36 @@ export const ProjectContainer = styled.div`
         flex-direction: column;
       }
     }
-    :hover {
-      & > div:last-child {
-        visibility: visible;
-      }
-      & > div:first-child {
-        filter: blur(2px) brightness(0.2);
-      }
-      background-color: ${(props) => props.theme['gray-900']};
-    }
   }
 
   &:hover {
     transform: scale(1.05);
   }
-  @media screen and (max-width: 1275px) {
-    width: 100%;
+  @media screen and (max-width: 1024px) {
+    & > a {
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+
+      & > div:first-child {
+        width: 100%;
+        height: 40%;
+      }
+    }
   }
 `
 
 export const BackDrop = styled.div`
-  visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  bottom: 0;
+  text-align: start;
+  width: 60%;
   padding: 1rem 2rem;
 
   & > h3 {
     color: ${(props) => props.theme['green-300']};
+    text-align: center;
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
   }
@@ -100,5 +97,11 @@ export const BackDrop = styled.div`
   & > p {
     color: ${(props) => props.theme.white};
     font-size: 1rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    text-align: justify;
+    margin-top: 2rem;
   }
 `
