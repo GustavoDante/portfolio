@@ -1,19 +1,6 @@
 import styled from 'styled-components'
 
-export const PortfolioPanelContainer = styled.div`
-  /* display: flex;
-  justify-content: center;
-  gap: 2rem; */
-
-  @media screen and (max-width: 1275px) {
-    flex-direction: column;
-  }
-
-  @media screen and (max-width: 840px) {
-    display: block;
-    width: 100%;
-  }
-`
+export const PortfolioPanelContainer = styled.div``
 
 export const ProjectContainer = styled.div`
   width: 100%;
@@ -27,6 +14,7 @@ export const ProjectContainer = styled.div`
   & > a {
     display: flex;
     background-color: ${(props) => props.theme['gray-700']};
+    text-decoration: none;
     border-radius: 1rem;
 
     height: 100%;
