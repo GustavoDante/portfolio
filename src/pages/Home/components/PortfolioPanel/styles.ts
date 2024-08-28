@@ -85,6 +85,8 @@ export const BackDrop = styled.div`
   & > p {
     color: ${(props) => props.theme.white};
     font-size: 1rem;
+    max-width: 26rem;
+    margin: 0 auto;
   }
 
   @media screen and (max-width: 1024px) {

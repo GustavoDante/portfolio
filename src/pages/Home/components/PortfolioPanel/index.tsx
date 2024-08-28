@@ -1,5 +1,5 @@
-import calcbet from '../../../../assets/projects/calcbet.png'
-import calcbetResponsive from '../../../../assets/projects/calcbet-responsive.png'
+import betsmart from '../../../../assets/projects/betsmart.png'
+import betsmartResponsive from '../../../../assets/projects/betsmart-responsive.png'
 
 import watchGather from '../../../../assets/projects/watchgather.png'
 import watchGatherResponsive from '../../../../assets/projects/watchgather-responsive.png'
@@ -15,20 +15,20 @@ export function PortfolioPanel() {
     <PortfolioPanelContainer>
       <ProjectContainer>
         <a
-          href="https://calcbet.gustavodante.com"
+          href="https://betsmart.gustavodante.com"
           target="_blank"
           rel="noreferrer"
         >
           <div>
             <img
-              src={calcbetResponsive}
+              src={betsmartResponsive}
               alt="Imagem ilustrando a plataforma em um smartphone"
             />
-            <img src={calcbet} alt="Imagem ilustrando a plataforma" />
+            <img src={betsmart} alt="Imagem ilustrando a plataforma" />
           </div>
           <BackDrop>
-            <h3>CalcBet</h3>
-            <p>{translations[language].projects.calcbet.description}</p>
+            <h3>BetSmart</h3>
+            <p>{translations[language].projects.betsmart.description}</p>
             <div></div>
           </BackDrop>
         </a>

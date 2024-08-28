@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <FooterContainer>
       <img src={logoGustavo} alt="Logo Gustavo Dante" />
-      <strong>© Gustavo Dante 2023</strong>
+      <strong>© Gustavo Dante 2024</strong>
     </FooterContainer>
   )
 }

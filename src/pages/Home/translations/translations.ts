@@ -202,6 +202,13 @@ export const translations = {
       title: 'Professional Experiences',
       jobs: [
         {
+          job: 'Full-Stack Developer',
+          data: 'Apr - 2024 / Today',
+          company: 'Cerv Digital',
+          description:
+            'I work on developing features for two web applications, and I am also responsible for the cloud infrastructure of both projects, currently hosted on AWS. I manage both the instances and the databases. The main technologies I use include Node.js, React.js, PostgreSQL, Sequelize, CSS, JavaScript, HTML, along with various other complementary tools. I have solid knowledge of Linux, which was crucial in setting up the cloud structure for both projects. As the primary person responsible for maintaining these platforms, I ensure organization and efficiency in developing new features. I also work closely with the company leadership, aligning deadlines and proposing ideas to improve the performance of the platforms.',
+        },
+        {
           job: 'Junior Full-Stack Developer',
           data: 'Jul - 2022 / Today',
           company: 'Softmakers Br',
@@ -222,9 +229,9 @@ export const translations = {
     },
     projects: {
       title: 'My Projects',
-      calcbet: {
+      betsmart: {
         description:
-          'Project developed for the calculation and registration of sports bets. I used ReactJS, TypeScript, integration with Firebase, Styled Components and among others.',
+          'Project developed for the calculation and registration of sports bets. I used NextJs, TypeScript, integration with Firebase, NextAuth, Tailwindcss and among others.',
       },
       watchgather: {
         description:
@@ -278,11 +285,18 @@ export const translations = {
       title: 'Experiências profissionais',
       jobs: [
         {
+          job: 'Desenvolvedor Full-Stack Pleno',
+          data: 'Abril - 2024 / Hoje',
+          company: 'Cev Digital',
+          description:
+            'Atuo no desenvolvimento de funcionalidades para duas aplicações web, onde também sou responsável pela infraestrutura de ambos os projetos na nuvem, atualmente hospedados na AWS. Cuido tanto das instâncias quanto dos bancos de dados. As tecnologias principais que utilizo incluem Node.js, React.js, PostgreSQL, Sequelize, CSS, JavaScript, HTML, além de várias outras ferramentas complementares. Tenho um conhecimento sólido em Linux, que foi essencial para configurar toda a estrutura em nuvem dos projetos. Sou o responsável principal pela manutenção das plataformas, onde a organização e a eficiência são fundamentais para o desenvolvimento de novas funcionalidades. Também colaboro estreitamente com a liderança da empresa, alinhando prazos e propondo ideias que possam melhorar o desempenho das plataformas.',
+        },
+        {
           job: 'Desenvolvedor Full-Stack Júnior',
-          data: 'Jul - 2022 / Hoje',
+          data: 'Jul - 2022 / Março - 2024',
           company: 'Softmakers Br',
           description:
-            'Trabalho no desenvolvimento de aplicações web, onde utilizei com frequência tecnologias como Node.js, React.js, Nest.js, PostgreSQL, PrismaJs, Firebase, JavaScript, CSS, Laravel, PHP, MySQL, HTML e Blade. Durante meu trabalho, fui responsável por realizar deploys na Google Cloud, tanto em fase de testes quanto em produção, garantindo uma entrega eficiente e confiável dos projetos. Ao lidar com os feedbacks dos clientes, desenvolvi soluções de problemas reportados, buscando soluções rápidas e eficazes para garantir a satisfação do cliente. Utilizei nos projetos os banco de dados PostgreSQL e MySQL.',
+            'Trabalhei no desenvolvimento de aplicações web, onde utilizei com frequência tecnologias como Node.js, React.js, Nest.js, PostgreSQL, PrismaJs, Firebase, JavaScript, CSS, Laravel, PHP, MySQL, HTML e Blade. Durante meu trabalho, fui responsável por realizar deploys na Google Cloud, tanto em fase de testes quanto em produção, garantindo uma entrega eficiente e confiável dos projetos. Ao lidar com os feedbacks dos clientes, desenvolvi soluções de problemas reportados, buscando soluções rápidas e eficazes para garantir a satisfação do cliente. Utilizei nos projetos os banco de dados PostgreSQL e MySQL.',
         },
         {
           job: 'Estágio Desenvolvedor FullStack',
@@ -298,9 +312,9 @@ export const translations = {
     },
     projects: {
       title: 'Meus Projetos',
-      calcbet: {
+      betsmart: {
         description:
-          'Projeto desenvolvido para o cálculo e registro de apostas esportivas. Utilizei ReactJS, TypeScript, integração com o Firebase, Styled Components e entre outros.',
+          'Projeto desenvolvido para o cálculo e registro de apostas esportivas. Utilizei NextJs, TypeScript, integração com o Firebase, NextAuth, Tailwindcss e entre outros.',
       },
       watchgather: {
         description:
