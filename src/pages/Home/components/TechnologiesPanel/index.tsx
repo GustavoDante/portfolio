@@ -21,205 +21,77 @@ import { useContext } from 'react'
 import { LanguageContext } from '../../../../contexts/LanguageContext'
 import { translations } from '../../translations/translations'
 
+// Array of technology data
+type TechnologyKey =
+  | 'reactjs'
+  | 'php'
+  | 'nodejs'
+  | 'typescript'
+  | 'postgresql'
+  | 'mysql'
+  | 'laravel'
+  | 'nestjs'
+  | 'nextjs'
+  | 'git'
+  | 'html5'
+  | 'css3'
+  | 'restapi'
+  | 'jquery'
+  | 'googlecloud'
+  | 'aws'
+  | 'styledcomponents'
+  | 'docker'
+
+type Technology = {
+  name: string
+  icon: string
+  key: TechnologyKey
+}
+
 export function TechnologiesPanel() {
   const { language } = useContext(LanguageContext)
 
+  const technologies: Technology[] = [
+    { name: 'ReactJS', icon: reactIcon, key: 'reactjs' },
+    { name: 'PHP', icon: phpIcon, key: 'php' },
+    { name: 'NodeJs', icon: nodeIcon, key: 'nodejs' },
+    { name: 'TypeScript', icon: typescriptIcon, key: 'typescript' },
+    { name: 'PostgreSQL', icon: postgresqlIcon, key: 'postgresql' },
+    { name: 'MySQL', icon: mysqlIcon, key: 'mysql' },
+    { name: 'Laravel', icon: laravelIcon, key: 'laravel' },
+    { name: 'NestJS', icon: nestIcon, key: 'nestjs' },
+    { name: 'Next.js', icon: nextIcon, key: 'nextjs' },
+    { name: 'Git', icon: gitIcon, key: 'git' },
+    { name: 'HTML 5', icon: htmlIcon, key: 'html5' },
+    { name: 'CSS 3', icon: cssIcon, key: 'css3' },
+    { name: 'REST APIs', icon: apiIcon, key: 'restapi' },
+    { name: 'jQuery', icon: jqueryIcon, key: 'jquery' },
+    { name: 'Google Cloud', icon: googleCloudIcon, key: 'googlecloud' },
+    { name: 'AWS', icon: awsIcon, key: 'aws' },
+    {
+      name: 'Styled Components',
+      icon: styledComponentsIcon,
+      key: 'styledcomponents',
+    },
+    { name: 'Docker', icon: dockerIcon, key: 'docker' },
+  ]
+
   return (
     <TecnologiesContainer>
-      <TechnologieWithOverlay>
-        <img src={reactIcon} alt="react icon" />
-        <div>
-          <h3>ReactJS</h3>
-          <p>
-            <span>
-              {translations[language].technologies.reactjs.experience}
-            </span>
-            {translations[language].technologies.reactjs.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={phpIcon} alt="php icon" />
-        <div>
-          <h3>PHP</h3>
-          <p>
-            <span>{translations[language].technologies.php.experience}</span>
-            {translations[language].technologies.php.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={nodeIcon} alt="node icon" />
-        <div>
-          <h3>NodeJs</h3>
-          <p>
-            <span>{translations[language].technologies.nodejs.experience}</span>
-            {translations[language].technologies.nodejs.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={typescriptIcon} alt="typescript icon" />
-        <div>
-          <h3>TypeScript</h3>
-          <p>
-            <span>
-              {translations[language].technologies.typescript.experience}
-            </span>
-            {translations[language].technologies.typescript.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={postgresqlIcon} alt="postgresql icon" />
-        <div>
-          <h3>PostgreSQL</h3>
-          <p>
-            <span>
-              {translations[language].technologies.postgresql.experience}
-            </span>
-            {translations[language].technologies.postgresql.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={mysqlIcon} alt="mysql icon" />
-        <div>
-          <h3>MySQL</h3>
-          <p>
-            <span>{translations[language].technologies.mysql.experience}</span>
-            {translations[language].technologies.mysql.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={laravelIcon} alt="laravel icon" />
-        <div>
-          <h3>Laravel</h3>
-          <p>
-            <span>
-              {translations[language].technologies.laravel.experience}
-            </span>
-            {translations[language].technologies.laravel.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={nestIcon} alt="nest icon" />
-        <div>
-          <h3>NestJS</h3>
-          <p>
-            <span>{translations[language].technologies.nestjs.experience}</span>
-            {translations[language].technologies.nestjs.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={nextIcon} alt="next icon" />
-        <div>
-          <h3>Next.js</h3>
-          <p>
-            <span>{translations[language].technologies.nextjs.experience}</span>
-            {translations[language].technologies.nextjs.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={gitIcon} alt="git icon" />
-        <div>
-          <h3>Git</h3>
-          <p>
-            <span>{translations[language].technologies.git.experience}</span>
-            {translations[language].technologies.git.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={htmlIcon} alt="html icon" />
-        <div>
-          <h3>HTML 5</h3>
-          <p>
-            <span>{translations[language].technologies.html5.experience}</span>
-            {translations[language].technologies.html5.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={cssIcon} alt="css icon" />
-        <div>
-          <h3>CSS 3</h3>
-          <p>
-            <span>{translations[language].technologies.css3.experience}</span>
-            {translations[language].technologies.css3.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={apiIcon} alt="api icon" />
-        <div>
-          <h3>REST APIs</h3>
-          <p>
-            <span>
-              {translations[language].technologies.restapi.experience}
-            </span>
-            {translations[language].technologies.restapi.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={jqueryIcon} alt="jquery icon" />
-        <div>
-          <h3>jQuery</h3>
-          <p>
-            <span>{translations[language].technologies.jquery.experience}</span>
-            {translations[language].technologies.jquery.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={googleCloudIcon} alt="google cloud icon" />
-        <div>
-          <h3>Google Cloud</h3>
-          <p>
-            <span>
-              {translations[language].technologies.googlecloud.experience}
-            </span>
-            {translations[language].technologies.googlecloud.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={awsIcon} alt="aws icon" />
-        <div>
-          <h3>AWS</h3>
-          <p>
-            <span>{translations[language].technologies.aws.experience}</span>
-            {translations[language].technologies.aws.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={styledComponentsIcon} alt="styled components icon" />
-        <div>
-          <h3>Styled Components</h3>
-          <p>
-            <span>
-              {translations[language].technologies.styledcomponents.experience}
-            </span>
-            {translations[language].technologies.styledcomponents.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
-      <TechnologieWithOverlay>
-        <img src={dockerIcon} alt="docker icon" />
-        <div>
-          <h3>Docker</h3>
-          <p>
-            <span>{translations[language].technologies.docker.experience}</span>
-            {translations[language].technologies.docker.description}
-          </p>
-        </div>
-      </TechnologieWithOverlay>
+      {technologies.map((tech) => (
+        <TechnologieWithOverlay key={tech.key}>
+          <img src={tech.icon} alt={`${tech.name.toLowerCase()} icon`} />
+          <div>
+            <h3>{tech.name}</h3>
+            <p>
+              <span>
+                {translations[language].technologies[tech.key].experience}
+              </span>
+              {translations[language].technologies[tech.key].description}
+            </p>
+          </div>
+        </TechnologieWithOverlay>
+      ))}
     </TecnologiesContainer>
   )
 }

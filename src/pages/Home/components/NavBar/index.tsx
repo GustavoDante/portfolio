@@ -1,10 +1,16 @@
 import {
+  CustomDropdown,
   DropdownContent,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  LanguageFlag,
   NavBarContainer,
   NavBarContent,
-  SelectLanguage,
 } from './styles'
 import logoGustavo from '../../../../assets/icons/header-gustavo-dante-icon.svg'
+import logoEn from '../../../../assets/icons/en.svg'
+import logoPtBr from '../../../../assets/icons/ptbr.svg'
 import React, { useContext, useState } from 'react'
 import { translations } from '../../translations/translations'
 import { Language, LanguageContext } from '../../../../contexts/LanguageContext'
@@ -12,11 +18,13 @@ import { Language, LanguageContext } from '../../../../contexts/LanguageContext'
 export function NavBar() {
   const [isNavVisible, setIsNavVisible] = useState(false)
   const { language, setLanguageAndSave } = useContext(LanguageContext)
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleDropdown = () => setIsOpen(!isOpen)
 
-  function handleSetLanguage(event: React.ChangeEvent<HTMLSelectElement>) {
-    setLanguageAndSave(event.target.value as Language)
+  const changeLanguage = (newLanguage: Language) => {
+    setLanguageAndSave(newLanguage)
+    setIsOpen(false)
   }
-
   function scrollTo(elementId: string) {
     document.getElementById(elementId)?.scrollIntoView({
       behavior: 'smooth',
@@ -29,10 +37,7 @@ export function NavBar() {
       <div>
         <img src={logoGustavo} alt="simbolo beta azul" />
       </div>
-      <SelectLanguage onChange={handleSetLanguage} defaultValue={language}>
-        <option value={'en'}>{translations[language].navbar.english}</option>
-        <option value={'pt'}>{translations[language].navbar.portuguese}</option>
-      </SelectLanguage>
+
       <NavBarContent>
         <a onClick={() => scrollTo('my-skills')}>
           {translations[language].navbar.skills}
@@ -43,6 +48,23 @@ export function NavBar() {
         <a onClick={() => scrollTo('my-degree')}>
           {translations[language].navbar.degrees}
         </a>
+
+        <CustomDropdown>
+          <DropdownToggle onClick={toggleDropdown}>
+            <LanguageFlag
+              src={language === 'en' ? logoEn : logoPtBr}
+              alt={language === 'en' ? 'English' : 'Português'}
+            />
+          </DropdownToggle>
+          <DropdownMenu isOpen={isOpen}>
+            <DropdownItem onClick={() => changeLanguage('en')}>
+              <LanguageFlag src={logoEn} alt="English" />
+            </DropdownItem>
+            <DropdownItem onClick={() => changeLanguage('pt')}>
+              <LanguageFlag src={logoPtBr} alt="Português" />
+            </DropdownItem>
+          </DropdownMenu>
+        </CustomDropdown>
         <div>
           <a
             onClick={() => {

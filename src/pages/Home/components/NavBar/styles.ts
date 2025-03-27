@@ -61,14 +61,17 @@ export const DropdownContent = styled.div<DropdownProps>`
 `
 
 export const NavBarContent = styled.nav`
+  display: flex;
+  align-items: center;
   font-weight: 600;
-  & > div {
+
+  & > div:last-child {
     display: none;
     font-size: 1.5rem;
   }
 
   @media screen and (max-width: 730px) {
-    & > div {
+    & > div:last-child {
       display: block;
     }
 
@@ -78,39 +81,79 @@ export const NavBarContent = styled.nav`
   }
 `
 
-export const SelectLanguage = styled.select`
-  background-color: ${(props) => props.theme['gray-100']};
-  border: thin solid ${(props) => props.theme['blue-700']};
-  border-radius: 1rem;
+export const CustomDropdown = styled.div`
+  position: relative;
   display: inline-block;
+  margin-left: 1rem; // Adicione espaçamento
+  margin-right: 1rem;
+  z-index: 100; // Aumente o z-index para garantir visibilidade
+  height: 2rem; // Defina uma altura mínima
+`
+
+export const DropdownToggle = styled.div`
+  background-color: ${(props) => props.theme['gray-100']};
+  border: 2px solid ${(props) => props.theme['blue-700']}; // Borda mais evidente
+  border-radius: 0.5rem;
   color: ${(props) => props.theme['blue-900']};
-  line-height: 1.5em;
-  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  padding: 0rem 0.5rem; // Ajuste o padding
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; // Centraliza o conteúdo
+  min-width: 2rem; // Largura mínima para o botão
+  min-height: 2rem; // Altura mínima para o botão
 
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  appearance: none;
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.5em;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+  }
+`
 
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%),
-    radial-gradient(#ddd 70%, transparent 72%);
-  background-position: calc(100% - 16px) calc(1em + 2px),
-    calc(100% - 11px) calc(1em + 2px), calc(100% - 0.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
-  background-repeat: no-repeat;
+export const LanguageFlag = styled.img`
+  width: 1.8rem; // Aumenta o tamanho da imagem
+  height: auto;
+  display: block; // Garante que a imagem seja exibida como um bloco
+  object-fit: contain; // Mantém a proporção da imagem
+`
 
-  :focus {
-    background-image: linear-gradient(45deg, white 50%, transparent 50%),
-      linear-gradient(135deg, transparent 50%, white 50%),
-      radial-gradient(gray 70%, transparent 72%);
-    background-position: calc(100% - 11px) 1em, calc(100% - 16px) 1em,
-      calc(100% - 0.5em) 0.5em;
-    background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
-    background-repeat: no-repeat;
-    border-color: ${(props) => props.theme['blue-500']};
-    outline: 0;
+export const DropdownMenu = styled.div<{ isOpen: boolean }>`
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 110; // Aumente o z-index
+  min-width: 100%;
+  background-color: ${(props) => props.theme['gray-100']};
+  border: 2px solid ${(props) => props.theme['blue-700']};
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Adiciona sombra para destacar
+
+  & > div:first-child {
+    padding: 0.5rem 0.5rem 0.25rem 0.5rem; // Ajusta o padding
+  }
+
+  & > div:last-child {
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem; // Ajusta o padding
+  }
+`
+
+export const DropdownItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: start; // Centraliza o conteúdo
+  gap: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.25rem; // Adiciona bordas arredondadas aos itens
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: ${(props) => props.theme['gray-300']};
   }
 `
