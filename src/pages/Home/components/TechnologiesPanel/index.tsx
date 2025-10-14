@@ -1,5 +1,5 @@
 import reactIcon from '../../../../assets/icons/react-icon.svg'
-import phpIcon from '../../../../assets/icons/php-icon.svg'
+import tailwindIcon from '../../../../assets/icons/tailwind-icon.svg'
 import nodeIcon from '../../../../assets/icons/node-icon.svg'
 import typescriptIcon from '../../../../assets/icons/typescript-icon.svg'
 import postgresqlIcon from '../../../../assets/icons/postgresql-icon.svg'
@@ -7,6 +7,9 @@ import mysqlIcon from '../../../../assets/icons/mysql-icon.svg'
 import laravelIcon from '../../../../assets/icons/laravel-icon.svg'
 import nestIcon from '../../../../assets/icons/nest-icon.svg'
 import nextIcon from '../../../../assets/icons/next-icon.svg'
+import shadcnIcon from '../../../../assets/icons/shadcn-icon.svg'
+import authjsIcon from '../../../../assets/icons/authjs-icon.svg'
+import prismaIcon from '../../../../assets/icons/prisma-icon.svg'
 import gitIcon from '../../../../assets/icons/git-icon.svg'
 import htmlIcon from '../../../../assets/icons/html-icon.svg'
 import cssIcon from '../../../../assets/icons/css-icon.svg'
@@ -24,7 +27,7 @@ import { translations } from '../../translations/translations'
 // Array of technology data
 type TechnologyKey =
   | 'reactjs'
-  | 'php'
+  | 'tailwindcss'
   | 'nodejs'
   | 'typescript'
   | 'postgresql'
@@ -32,6 +35,9 @@ type TechnologyKey =
   | 'laravel'
   | 'nestjs'
   | 'nextjs'
+  | 'shadcn'
+  | 'authjs'
+  | 'prisma'
   | 'git'
   | 'html5'
   | 'css3'
@@ -53,7 +59,7 @@ export function TechnologiesPanel() {
 
   const technologies: Technology[] = [
     { name: 'ReactJS', icon: reactIcon, key: 'reactjs' },
-    { name: 'PHP', icon: phpIcon, key: 'php' },
+    { name: 'Tailwind CSS', icon: tailwindIcon, key: 'tailwindcss' },
     { name: 'NodeJs', icon: nodeIcon, key: 'nodejs' },
     { name: 'TypeScript', icon: typescriptIcon, key: 'typescript' },
     { name: 'PostgreSQL', icon: postgresqlIcon, key: 'postgresql' },
@@ -61,6 +67,9 @@ export function TechnologiesPanel() {
     { name: 'Laravel', icon: laravelIcon, key: 'laravel' },
     { name: 'NestJS', icon: nestIcon, key: 'nestjs' },
     { name: 'Next.js', icon: nextIcon, key: 'nextjs' },
+    { name: 'Shadcn/UI', icon: shadcnIcon, key: 'shadcn' },
+    { name: 'Auth.js', icon: authjsIcon, key: 'authjs' },
+    { name: 'Prisma', icon: prismaIcon, key: 'prisma' },
     { name: 'Git', icon: gitIcon, key: 'git' },
     { name: 'HTML 5', icon: htmlIcon, key: 'html5' },
     { name: 'CSS 3', icon: cssIcon, key: 'css3' },

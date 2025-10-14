@@ -70,6 +70,7 @@ export function Home() {
       </AboutMeContainer>
       <SkillsContainer>
         <h1 id="my-skills">{translations[language].skills.title}</h1>
+        <p>{translations[language].technologies.description}</p>
         <TechnologiesPanel />
       </SkillsContainer>
       <ExperiencePanelContainer>

@@ -92,6 +92,10 @@ export const SkillsContainer = styled.div`
       }
     }
   }
+
+  & > p {
+    margin: 2rem 0;
+  }
 `
 
 export const PortfolioContainer = styled.div`
