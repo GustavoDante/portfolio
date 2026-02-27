@@ -1,23 +1,37 @@
 import { useContext } from 'react'
-import { FeedBackupsPanelContainer } from './styles'
 import { LanguageContext } from '../../../../contexts/LanguageContext'
 import { translations } from '../../translations/translations'
+import { FeedBackupsPanelContainer, TestimonialCard } from './styles'
 
 export function FeedBackPanel() {
   const { language } = useContext(LanguageContext)
   return (
     <FeedBackupsPanelContainer>
-      {translations[language].feedbacks.linkedin.map((linkedin) => {
+      {translations[language].feedbacks.linkedin.map((item, index) => {
+        const initials = item.name
+          .split(' ')
+          .slice(0, 2)
+          .map((w) => w[0])
+          .join('')
         return (
-          <a
-            href={linkedin.url}
+          <TestimonialCard
+            href={item.url}
             target="_blank"
             rel="noreferrer"
-            key={linkedin.url}
+            key={item.url}
+            data-reveal
+            data-reveal-delay={String(Math.min(index + 1, 5))}
           >
-            <h3>{linkedin.name}</h3>
-            <p>{linkedin.description}</p>
-          </a>
+            <p className="testimonial-text">{item.description}</p>
+            <div className="testimonial-author">
+              <div className="avatar">{initials}</div>
+              <div className="author-info">
+                <strong>{item.name}</strong>
+                <span>{item.role}</span>
+              </div>
+              <span className="linkedin-hint">LinkedIn</span>
+            </div>
+          </TestimonialCard>
         )
       })}
     </FeedBackupsPanelContainer>

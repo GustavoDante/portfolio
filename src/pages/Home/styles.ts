@@ -3,247 +3,208 @@ import styled from 'styled-components'
 export const HomeContainer = styled.div`
   > header + div,
   > div + div {
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
 `
 
+// ── Shared section title style ──────────────────────────────────────────────
+export const SectionLabel = styled.span`
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: ${(props) => props.theme['green-300']};
+  margin-bottom: 0.5rem;
+`
+
+// ── About Me ────────────────────────────────────────────────────────────────
 export const AboutMeContainer = styled.div`
   & > h1 {
     display: flex;
     align-items: center;
-    margin: 4rem 0;
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+    font-size: 2rem;
+    white-space: normal;
 
-    ::before {
+    &::before {
       content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 6rem;
-      height: 0.1rem;
-      background-color: ${(props) => props.theme['green-300']};
-
-      @media screen and (max-width: 1050px) {
-        width: 3rem;
-      }
-
-      @media screen and (max-width: 675px) {
-        width: 2rem;
-      }
+      flex-shrink: 0;
+      width: 3px;
+      height: 2rem;
+      background: linear-gradient(
+        to bottom,
+        ${(props) => props.theme['green-300']},
+        transparent
+      );
+      border-radius: 2px;
     }
-    ::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 6rem;
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      background-color: ${(props) => props.theme['green-300']};
-
-      @media screen and (max-width: 1050px) {
-        left: 3rem;
-      }
-
-      @media screen and (max-width: 675px) {
-        left: 2rem;
-      }
-    }
-  }
-
-  & > p {
-    margin: 1rem 0;
   }
 `
 
+export const AboutMeCard = styled.div`
+  background: ${(props) => props.theme['glass-bg']};
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid ${(props) => props.theme['glass-border']};
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+
+  & > p {
+    color: ${(props) => props.theme['gray-100']};
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+`
+
+export const HighlightsList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid ${(props) => props.theme['glass-border']};
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: ${(props) => props.theme['gray-300']};
+    line-height: 1.5;
+
+    &::before {
+      content: '▸';
+      color: ${(props) => props.theme['green-300']};
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+  }
+`
+
+// ── Skills ───────────────────────────────────────────────────────────────────
 export const SkillsContainer = styled.div`
   & > h1 {
     display: flex;
     align-items: center;
-    margin: 4rem 0;
-    overflow: hidden;
+    gap: 1rem;
+    margin: 4rem 0 0.5rem;
+    font-size: 2rem;
+    white-space: normal;
 
-    ::before {
+    &::after {
       content: '';
-      display: block;
-      position: absolute;
-      left: 28rem;
-      width: calc(100% - 28rem);
-      height: 0.1rem;
-      background-color: ${(props) => props.theme['green-300']};
-
-      @media screen and (max-width: 1050px) {
-        left: 23rem;
-        width: calc(100% - 23rem);
-      }
-    }
-    ::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 28rem;
-
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      background-color: ${(props) => props.theme['green-300']};
-
-      @media screen and (max-width: 1050px) {
-        left: 23rem;
-      }
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        ${(props) => props.theme['green-300']}55,
+        transparent
+      );
     }
   }
 
   & > p {
-    margin: 2rem 0;
+    margin: 1rem 0 2rem;
+    color: ${(props) => props.theme['gray-500']};
+    font-size: 0.95rem;
   }
 `
 
+// ── Portfolio / Projects ─────────────────────────────────────────────────────
 export const PortfolioContainer = styled.div`
   & > h1 {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+    font-size: 2rem;
+    white-space: normal;
 
-    margin: 4rem 0;
-    height: 3rem;
-
-    color: ${(props) => props.theme['gray-300']};
-    background-color: ${(props) => props.theme['blue-900']};
-    width: max-content;
-    padding: 0 1rem;
-
-    @media screen and (max-width: 1050px) {
-      font-size: 1.3rem;
-    }
-
-    ::before {
+    &::before {
       content: '';
-      display: block;
-      position: absolute;
-      right: 0;
-      z-index: -1;
-      width: 100%;
-      height: 0.1rem;
-      background-color: ${(props) => props.theme['green-300']};
-      border-radius: 1rem 0 0 1rem;
-
-      @media screen and (max-width: 1050px) {
-        width: calc(100% - 3rem);
-      }
-
-      @media screen and (max-width: 675px) {
-        width: calc(100% - 2rem);
-      }
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(
+        to left,
+        ${(props) => props.theme['green-300']}55,
+        transparent
+      );
     }
   }
 `
 
+// ── Feedbacks ────────────────────────────────────────────────────────────────
 export const FeedbacksContainer = styled.div`
   & > h1 {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+    font-size: 2rem;
+    white-space: normal;
 
-    margin: 4rem 0;
-    height: 3rem;
-
-    color: ${(props) => props.theme['gray-300']};
-    background-color: ${(props) => props.theme['blue-900']};
-    width: max-content;
-    padding: 0 1rem;
-
-    @media screen and (max-width: 1050px) {
-      font-size: 1.3rem;
-    }
-
-    ::before {
+    &::after {
       content: '';
-      display: block;
-      position: absolute;
-      right: 0;
-      z-index: -1;
-      width: 100%;
-      height: 0.1rem;
-      background-color: ${(props) => props.theme['green-300']};
-      border-radius: 1rem 0 0 1rem;
-
-      @media screen and (max-width: 1050px) {
-        width: calc(100% - 3rem);
-      }
-
-      @media screen and (max-width: 675px) {
-        width: calc(100% - 2rem);
-      }
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        ${(props) => props.theme['green-300']}55,
+        transparent
+      );
     }
   }
 `
 
+// ── Experience ───────────────────────────────────────────────────────────────
 export const ExperiencePanelContainer = styled.div`
   > h1 {
-    position: flex;
     display: flex;
-    margin: 4rem 0;
     align-items: center;
-    color: ${(props) => props.theme.black};
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+    font-size: 2rem;
+    white-space: normal;
+    color: ${(props) => props.theme['gray-100']};
 
-    @media screen and (max-width: 1050px) {
-      font-size: 1.3rem;
-    }
-
-    ::before {
+    &::before {
       content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      z-index: -1;
-      width: 35rem;
-      height: 3rem;
-      background-color: ${(props) => props.theme['green-300']};
-      border-radius: 0 1rem 1rem 0;
-
-      @media screen and (max-width: 1050px) {
-        width: 23rem;
-      }
-
-      @media screen and (max-width: 675px) {
-        width: 21rem;
-      }
-
-      @media screen and (max-width: 400px) {
-        width: 100%;
-      }
+      flex-shrink: 0;
+      width: 3px;
+      height: 2rem;
+      background: linear-gradient(
+        to bottom,
+        ${(props) => props.theme['green-300']},
+        transparent
+      );
+      border-radius: 2px;
     }
   }
 `
 
+// ── Degree ───────────────────────────────────────────────────────────────────
 export const DegreePanelContainer = styled.div`
   & > h1 {
     display: flex;
-    margin: 4rem 0;
-    height: 3rem;
     align-items: center;
-    color: ${(props) => props.theme.black};
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+    font-size: 2rem;
+    white-space: normal;
+    color: ${(props) => props.theme['gray-100']};
 
-    @media screen and (max-width: 1050px) {
-      font-size: 1.3rem;
-    }
-  }
-
-  ::before {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    width: calc(100% - 5rem);
-    height: 3rem;
-    background-color: ${(props) => props.theme['green-300']};
-    border-radius: 1rem 0 0 1rem;
-
-    @media screen and (max-width: 1050px) {
-      width: calc(100% - 3rem);
-    }
-
-    @media screen and (max-width: 675px) {
-      width: calc(100% - 2rem);
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        ${(props) => props.theme['green-300']}55,
+        transparent
+      );
     }
   }
 `
@@ -255,13 +216,18 @@ export const ScrollToTopButton = styled.button<ScrollToTopButtonProps>`
   display: flex;
   position: fixed;
   visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
-  bottom: 20px;
-  right: 20px;
+  opacity: ${(props) => (props.show ? '1' : '0')};
+  bottom: 2rem;
+  right: 2rem;
 
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
 
-  background-color: ${(props) => props.theme['green-300']};
+  background: linear-gradient(
+    135deg,
+    ${(props) => props.theme['green-300']},
+    ${(props) => props.theme['green-700']}
+  );
 
   border-radius: 50%;
   border: none;
@@ -270,13 +236,15 @@ export const ScrollToTopButton = styled.button<ScrollToTopButtonProps>`
   justify-content: center;
   align-items: center;
 
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  box-shadow: 0 4px 20px rgba(115, 242, 168, 0.3);
 
-  :hover {
-    transform: scale(1.1);
+  &:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 6px 24px rgba(115, 242, 168, 0.45);
   }
 
   & > img {
-    width: 80%;
+    width: 55%;
   }
 `

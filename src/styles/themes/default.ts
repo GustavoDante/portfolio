@@ -19,10 +19,17 @@ export const defaultTheme = {
   'purple-700': '#373270',
 
   'green-300': '#73F2A8',
+  'green-500': '#2DD882',
   'green-700': '#015F43',
 
   'red-500': '#AB222E',
   'red-700': '#7A1921',
 
   'yellow-500': '#FFA445',
+
+  // Glass morphism tokens
+  'glass-bg': 'rgba(255, 255, 255, 0.04)',
+  'glass-border': 'rgba(255, 255, 255, 0.08)',
+  'glass-hover': 'rgba(255, 255, 255, 0.07)',
+  'glass-strong': 'rgba(255, 255, 255, 0.06)',
 }
