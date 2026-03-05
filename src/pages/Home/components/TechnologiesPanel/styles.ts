@@ -5,7 +5,7 @@ export const TecnologiesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-gap: 1rem;
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   background: ${(props) => props.theme['glass-strong']};
   backdrop-filter: blur(16px);
@@ -120,18 +120,38 @@ export const TechnologieWithOverlay = styled.div`
   }
 
   @keyframes size-transition {
-    0% { visibility: hidden; width: 100%; height: 0px; }
-    100% { visibility: visible; width: 25rem; height: auto; }
+    0% {
+      visibility: hidden;
+      width: 100%;
+      height: 0px;
+    }
+    100% {
+      visibility: visible;
+      width: 25rem;
+      height: auto;
+    }
   }
 
   @keyframes size-transition-for-mobile {
-    0% { visibility: hidden; width: 100%; height: 100%; }
-    100% { visibility: visible; width: calc(100% * 2.5); height: auto; }
+    0% {
+      visibility: hidden;
+      width: 100%;
+      height: 100%;
+    }
+    100% {
+      visibility: visible;
+      width: calc(100% * 2.5);
+      height: auto;
+    }
   }
 
   @keyframes transition-text {
-    0% { visibility: hidden; }
-    100% { visibility: visible; }
+    0% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
   }
 `
 
@@ -215,7 +235,9 @@ export const Dot = styled.button<{ active: boolean }>`
   border: none;
   background: ${(props) =>
     props.active ? props.theme['green-300'] : props.theme['gray-600']};
-  transition: width 0.3s ease, background 0.3s ease;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
   cursor: pointer;
   padding: 0;
 `
