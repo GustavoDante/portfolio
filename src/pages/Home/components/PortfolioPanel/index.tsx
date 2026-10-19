@@ -1,115 +1,150 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { LanguageContext } from '../../../../contexts/LanguageContext'
+import { QuietButton, SectionTitle, TextLink } from '../../styles'
 import { translations } from '../../translations/translations'
+import { type ProjectCategory, projects } from './projectsData'
 import {
-  PortfolioPanelContainer,
-  ProjectBody,
-  ProjectCard,
-  ProjectFooter,
-  ProjectImageArea,
-  Tag,
-  TagsRow,
+  BrowserBar,
+  BrowserFrame,
+  FilterButton,
+  FiltersRow,
+  Layout,
+  LinksRow,
+  PhoneFrame,
+  ProjectInfo,
+  ProjectList,
+  ProjectRow,
+  ProjectScroller,
+  ProjectTab,
+  QuoteRow,
+  Screens,
+  Showcase,
 } from './styles'
 
-type ProjectKey = 'watchgather' | 'sinthope' | 'vitarisx' | 'cinqfinance'
+type Filter = 'all' | ProjectCategory
 
-const projectVisuals: Record<
-  ProjectKey,
-  { gradient: string; images?: { mobile: string; desktop: string } }
-> = {
-  watchgather: {
-    gradient: 'linear-gradient(135deg, #0a001a 0%, #1609a0 60%, #5C54BD 140%)',
-    // images: { mobile: watchGatherResponsive, desktop: watchGather },
-  },
-  sinthope: {
-    gradient: 'linear-gradient(135deg, #030117 0%, #100773 55%, #015F43 140%)',
-  },
-  vitarisx: {
-    gradient: 'linear-gradient(135deg, #030117 0%, #373270 55%, #5C54BD 140%)',
-  },
-  cinqfinance: {
-    gradient: 'linear-gradient(135deg, #030117 0%, #100773 55%, #73F2A8 140%)',
-  },
-}
+const filterOrder: Filter[] = ['all', 'platform', 'site']
 
-const projectOrder: ProjectKey[] = [
-  'sinthope',
-  'cinqfinance',
-  'vitarisx',
-  'watchgather',
-]
+const WHATSAPP_URL = 'https://wa.me/5581991642089'
+
+const matchesFilter = (category: ProjectCategory, filter: Filter) =>
+  filter === 'all' || category === filter
 
 export function PortfolioPanel() {
   const { language } = useContext(LanguageContext)
-  const proj = translations[language].projects
+  const text = translations[language].projects
+  const [filter, setFilter] = useState<Filter>('all')
+  const [selectedKey, setSelectedKey] = useState(projects[0].key)
+
+  const visible = projects.filter((project) =>
+    matchesFilter(project.category, filter),
+  )
+  const selected =
+    visible.find((project) => project.key === selectedKey) ?? visible[0]
+  const item = text.items[selected.key]
+  const host = selected.links[0].url.replace(/^https?:\/\//, '')
 
   return (
-    <PortfolioPanelContainer>
-      {projectOrder.map((key, index) => {
-        const project = proj[key]
-        const visuals = projectVisuals[key]
+    <>
+      <SectionTitle>{text.heading}</SectionTitle>
 
-        return (
-          <ProjectCard
-            key={key}
-            data-reveal
-            data-reveal-delay={String(Math.min((index % 3) + 1, 5))}
+      <FiltersRow role="group" aria-label={text.filterGroup}>
+        {filterOrder.map((value) => (
+          <FilterButton
+            key={value}
+            type="button"
+            active={filter === value}
+            aria-pressed={filter === value}
+            onClick={() => setFilter(value)}
           >
-            <ProjectImageArea
-              gradient={visuals.gradient}
-              hasImage={!!visuals.images}
-            >
-              {visuals.images ? (
-                <div className="image-pair">
-                  <img
-                    src={visuals.images.mobile}
-                    alt={`${key} mobile preview`}
-                  />
-                  <img
-                    src={visuals.images.desktop}
-                    alt={`${key} desktop preview`}
-                  />
-                </div>
-              ) : (
-                <span className="gradient-label">
-                  {key.charAt(0).toUpperCase() + key.slice(1)}
-                </span>
-              )}
-            </ProjectImageArea>
+            {text.filters[value]}
+            <span>
+              {projects.filter((p) => matchesFilter(p.category, value)).length}
+            </span>
+          </FilterButton>
+        ))}
+      </FiltersRow>
 
-            <ProjectBody>
-              <h3>
-                {
-                  {
-                    watchgather: 'WatchGather',
-                    sinthope: 'SINTHOSCPE',
-                    vitarisx: 'VitarisX',
-                    cinqfinance: 'CinQ Finance',
-                  }[key]
-                }
-              </h3>
-              <p>{project.description}</p>
-              <TagsRow>
-                {project.tags.map((tag) => (
-                  <Tag key={tag}>{tag}</Tag>
-                ))}
-              </TagsRow>
-            </ProjectBody>
+      <ProjectScroller role="group" aria-label={text.pickerGroup}>
+        {visible.map((project) => (
+          <ProjectTab
+            key={project.key}
+            type="button"
+            active={project.key === selected.key}
+            aria-pressed={project.key === selected.key}
+            onClick={() => setSelectedKey(project.key)}
+          >
+            {text.items[project.key].name}
+          </ProjectTab>
+        ))}
+      </ProjectScroller>
 
-            <ProjectFooter>
-              {project.url ? (
-                <a href={project.url} target="_blank" rel="noreferrer">
-                  {language === 'en' ? 'View project' : 'Ver projeto'}
-                </a>
-              ) : (
-                <span>
-                  {language === 'en' ? 'Private project' : 'Projeto privado'}
+      <Layout>
+        <ProjectList>
+          {visible.map((project) => (
+            <li key={project.key}>
+              <ProjectRow
+                type="button"
+                active={project.key === selected.key}
+                aria-pressed={project.key === selected.key}
+                onClick={() => setSelectedKey(project.key)}
+              >
+                <span className="marker" aria-hidden="true">
+                  →
                 </span>
-              )}
-            </ProjectFooter>
-          </ProjectCard>
-        )
-      })}
-    </PortfolioPanelContainer>
+                <span className="name">{text.items[project.key].name}</span>
+                <span className="type">{text.items[project.key].type}</span>
+              </ProjectRow>
+            </li>
+          ))}
+        </ProjectList>
+
+        <Showcase key={selected.key}>
+          <Screens>
+            <BrowserFrame>
+              <BrowserBar>{host}</BrowserBar>
+              <img
+                src={selected.desktop}
+                alt={text.desktopPreview}
+                loading="lazy"
+              />
+            </BrowserFrame>
+            <PhoneFrame>
+              <img
+                src={selected.mobile}
+                alt={text.mobilePreview}
+                loading="lazy"
+              />
+            </PhoneFrame>
+          </Screens>
+
+          <ProjectInfo>
+            <span className="type">{item.type}</span>
+            <h3>{item.name}</h3>
+            <p className="description">{item.description}</p>
+            <p className="stack">{selected.tags.join('  ·  ')}</p>
+            <LinksRow>
+              {selected.links.map((link) => (
+                <TextLink
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.label} ↗
+                </TextLink>
+              ))}
+            </LinksRow>
+          </ProjectInfo>
+        </Showcase>
+      </Layout>
+
+      <QuoteRow>
+        <p>{text.ctaText}</p>
+        <QuietButton href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+          {text.ctaButton} <span aria-hidden="true">→</span>
+        </QuietButton>
+      </QuoteRow>
+    </>
   )
 }

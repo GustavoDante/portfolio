@@ -10,22 +10,22 @@
 <stop offset="1" stop-color="#1DBBF1"/>
 </linearGradient>
 <linearGradient id="paint1_linear_128_61" x1="73.7856" y1="143.724" x2="170.671" y2="190.884" gradientUnits="userSpaceOnUse">
-<stop stop-color="#73f2a8
+<stop stop-color="#1DBBF1
 "/>
-<stop offset="0.552228" stop-color="#73f2a8
+<stop offset="0.552228" stop-color="#1DBBF1
 "/>
-<stop offset="1" stop-color="#73f2a8
+<stop offset="1" stop-color="#1DBBF1
 "/>
 </linearGradient>
 <linearGradient id="paint2_linear_128_61" x1="155.914" y1="21.8152" x2="155.914" y2="182.542" gradientUnits="userSpaceOnUse">
-<stop stop-color="#73f2a8"/>
+<stop stop-color="#1DBBF1"/>
 <stop offset="0.398093" stop-color="#2A8CC3"/>
 <stop offset="1" stop-color="#A104DC"/>
 </linearGradient>
 <linearGradient id="paint3_linear_128_61" x1="90.1481" y1="99.4517" x2="129.287" y2="138.912" gradientUnits="userSpaceOnUse">
-<stop stop-color="#73f2a8
+<stop stop-color="#1DBBF1
 "/>
-<stop offset="1" stop-color="#73f2a8
+<stop offset="1" stop-color="#1DBBF1
 "/>
 </linearGradient>
 </defs>

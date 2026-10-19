@@ -1,197 +1,187 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import {
+  fadeUpEntrance,
+  mobileBreakpoint,
+  monoLabel,
+  TextLink,
+} from '../../styles'
 
-export const HeaderContainer = styled.header`
-  display: block;
-  width: 100%;
-  height: 42rem;
-
-  & > div {
-    position: absolute;
-    left: 0;
-    padding: 0 12rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    width: 100%;
-    height: 42rem;
-    z-index: 1;
-    overflow: hidden;
-
-    & > img {
-      min-width: 80rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    @media screen and (max-width: 1050px) {
-      padding: 0 4rem;
-    }
-
-    @media screen and (max-width: 850px) {
-      grid-template-columns: 1fr 1fr;
-      height: 25rem;
-      padding: 0 4rem;
-
-      & > div:not(:first-child) {
-        position: absolute;
-        bottom: 0;
-        right: 0rem;
-        padding-right: 4rem;
-      }
-    }
-    @media screen and (max-width: 675px) {
-      grid-template-columns: 1fr;
-      height: 35rem;
-
-      & > div:not(:first-child) {
-        padding: 0 1rem 0 1rem;
-        width: 100%;
-
-        & > div {
-          margin: 0 auto;
-        }
-      }
-    }
-
-    @media screen and (max-width: 400px) {
-      height: 31.5rem;
-      padding: 0;
-    }
+const pulse = keyframes`
+  0%,
+  100% {
+    transform: translateY(0);
   }
-
-  @media screen and (max-width: 850px) {
-    height: 25rem;
-  }
-
-  @media screen and (max-width: 675px) {
-    height: 35rem;
-  }
-
-  @media screen and (max-width: 400px) {
-    height: 31.5rem;
+  50% {
+    transform: translateY(-8px);
   }
 `
 
-export const IntroductionContainer = styled.div`
+export const HeroContainer = styled.section`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 88px 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 56px 64px;
+
+  @media ${mobileBreakpoint} {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 40px;
+    padding: 48px 20px 0;
+  }
+`
+
+export const HeroContent = styled.div`
+  flex: 1 1 440px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  width: 100%;
+  gap: 28px;
+  padding-bottom: 96px;
 
-  & > strong {
-    background: ${(props) => props.theme['green-300']};
-    color: ${(props) => props.theme.black};
-    align-self: flex-start;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+  @media ${mobileBreakpoint} {
+    flex: none;
+    gap: 24px;
+    padding-bottom: 0;
+  }
+`
+
+export const Eyebrow = styled.p`
+  ${monoLabel}
+  color: ${(props) => props.theme.muted};
+  ${fadeUpEntrance(0.05)}
+`
+
+export const HeroTitle = styled.h1`
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: ${(props) => props.theme.white};
+  ${fadeUpEntrance(0.14)}
+
+  & > span:last-child {
+    color: ${(props) => props.theme['green-300']};
   }
 
-  @media screen and (max-width: 850px) {
-    justify-content: flex-start;
-    margin-top: 5rem;
+  @media ${mobileBreakpoint} {
+    font-size: clamp(34px, 13vw, 52px);
+
+    & > span:first-child {
+      display: block;
+    }
   }
+`
 
-  @media screen and (max-width: 675px) {
-    align-items: center;
+export const HeroText = styled.p`
+  font-size: 18px;
+  line-height: 1.65;
+  color: ${(props) => props.theme.soft};
+  max-width: 500px;
+  ${fadeUpEntrance(0.24)}
 
-    & > strong {
-      align-self: center;
+  @media ${mobileBreakpoint} {
+    font-size: 17px;
+  }
+`
+
+export const HeroActions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+  ${fadeUpEntrance(0.34)}
+
+  @media ${mobileBreakpoint} {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+
+    ${TextLink} {
+      justify-content: center;
     }
+  }
+`
 
-    & > span {
-      text-align: center;
-    }
+export const NowRow = styled.p`
+  ${monoLabel}
+  padding-top: 24px;
+  border-top: 1px solid ${(props) => props.theme.line};
+  line-height: 1.7;
+  color: ${(props) => props.theme.muted};
+  ${fadeUpEntrance(0.34)}
+
+  & > span {
+    color: ${(props) => props.theme.text};
   }
 `
 
 export const PhotoContainer = styled.div`
-  display: flex;
-  align-items: end;
-  justify-content: end;
+  flex: 0 0 480px;
+  max-width: 100%;
+  margin-left: auto;
+  ${fadeUpEntrance(0.24)}
 
-  & > div {
-    position: relative;
-    width: 30rem;
-    height: 28rem;
-
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    border: 1px solid ${(props) => props.theme['gray-300']};
-    border-bottom: 0;
-    border-radius: 1.5rem 1.5rem 0 0;
-
-    & > div {
-      position: absolute;
-      display: flex;
-      top: 2rem;
-      left: 2rem;
-      gap: 1rem;
-
-      & > img {
-        width: 2rem;
-        filter: brightness(0) invert(1);
-
-        animation: pulse 1s ease-in-out infinite;
-
-        @media screen and (max-width: 400px) {
-          width: 1.3rem;
-        }
-      }
-    }
-
-    & > img {
-      position: absolute;
-      bottom: 0;
-      width: 110%;
-      image-rendering: optimizeSpeed;
-    }
-
-    @media screen and (max-width: 850px) {
-      width: 18rem;
-      height: 17rem;
-    }
-
-    @media screen and (max-width: 400px) {
-      width: 15rem;
-      height: 14rem;
-    }
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-0.5rem);
-    }
+  @media ${mobileBreakpoint} {
+    flex: none;
+    width: 100%;
+    margin-left: 0;
   }
 `
 
-export const ContactButtonsContainer = styled.div`
+export const PhotoCard = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 448px;
+  border-radius: 24px 24px 0 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid ${(props) => props.theme.line};
+  border-bottom: 0;
+  overflow: hidden;
+
+  & > img {
+    position: absolute;
+    bottom: 0;
+    left: -2%;
+    width: 106%;
+    max-width: none;
+    height: auto;
+    display: block;
+  }
+
+  @media ${mobileBreakpoint} {
+    max-width: none;
+    height: 330px;
+  }
+`
+
+export const TechIcons = styled.div`
+  position: absolute;
+  top: 28px;
+  left: 28px;
   display: flex;
-  gap: 1rem;
+  gap: 16px;
+  z-index: 1;
 
-  & > a {
-    text-decoration: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 0.5rem;
-    color: ${(props) => props.theme.white};
-    font-weight: 600;
-    font-size: 0.8rem;
-    border: 1px solid ${(props) => props.theme.white};
+  & > img {
+    width: 32px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+    animation: ${pulse} 1s ease-in-out infinite;
+  }
 
-    :first-child {
-      background: ${(props) => props.theme['green-300']};
-      border: 0;
-      color: ${(props) => props.theme.black};
+  @media ${mobileBreakpoint} {
+    top: 20px;
+    left: 20px;
+    gap: 14px;
+
+    & > img {
+      width: 30px;
     }
   }
 `

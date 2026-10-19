@@ -1,121 +1,132 @@
 import styled from 'styled-components'
+import { mobileBreakpoint, monoLabel } from '../../styles'
 
-export const TimelineContainer = styled.div`
-  position: relative;
-  padding-left: 2rem;
-  margin-bottom: 4rem;
+export const JobsHeading = styled.div`
+  margin-bottom: 40px;
 
-  /* Vertical line */
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.4rem;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(
-      to bottom,
-      ${(props) => props.theme['green-300']},
-      ${(props) => props.theme['green-300']}22
-    );
-    border-radius: 2px;
-  }
-
-  @media screen and (max-width: 675px) {
-    padding-left: 1.25rem;
+  @media ${mobileBreakpoint} {
+    margin-bottom: 28px;
   }
 `
 
-export const TimelineItem = styled.div`
-  position: relative;
-  margin-bottom: 2.5rem;
-
-  /* Dot on the timeline */
-  &::before {
-    content: '';
-    position: absolute;
-    left: -2.45rem;
-    top: 0.45rem;
-    width: 0.9rem;
-    height: 0.9rem;
-    border-radius: 50%;
-    background: ${(props) => props.theme['green-300']};
-    box-shadow: 0 0 0 3px ${(props) => props.theme['blue-900']},
-      0 0 0 5px ${(props) => props.theme['green-300']}44;
-  }
+export const JobItem = styled.div`
+  border-top: 1px solid ${(props) => props.theme.line};
 
   &:last-child {
-    margin-bottom: 0;
+    border-bottom: 1px solid ${(props) => props.theme.line};
+  }
+`
+
+export const JobButton = styled.button`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 32px;
+  align-items: baseline;
+  padding: 24px 0;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  text-align: left;
+
+  & > .date {
+    ${monoLabel}
+    flex: 0 0 170px;
+    font-size: 11px;
+    color: ${(props) => props.theme.muted};
   }
 
-  &:last-child::before {
-    background: ${(props) => props.theme['gray-500']};
-    box-shadow: 0 0 0 3px ${(props) => props.theme['blue-900']},
-      0 0 0 5px ${(props) => props.theme['gray-500']}44;
+  & > .title {
+    flex: 1 1 260px;
+    min-width: 0;
   }
 
-  @media screen and (max-width: 675px) {
-    &::before {
-      left: -1.7rem;
-      width: 0.75rem;
-      height: 0.75rem;
+  & > .title > .role {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: ${(props) => props.theme.white};
+  }
+
+  & > .title > .company {
+    display: block;
+    margin-top: 4px;
+    font-size: 15px;
+    color: ${(props) => props.theme.muted};
+  }
+
+  & > .sign {
+    flex: none;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 18px;
+    color: ${(props) => props.theme.muted};
+    transition: color 0.2s ease;
+  }
+
+  &:hover > .sign {
+    color: ${(props) => props.theme.text};
+  }
+
+  @media ${mobileBreakpoint} {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 16px;
+    align-items: start;
+    padding: 20px 0;
+    min-height: 44px;
+
+    & > .date {
+      grid-column: 1;
+      flex: none;
+    }
+
+    & > .title {
+      grid-column: 1;
+    }
+
+    & > .title > .role {
+      font-size: 18px;
+    }
+
+    & > .title > .company {
+      font-size: 14px;
+    }
+
+    & > .sign {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      padding-top: 18px;
     }
   }
 `
 
-export const CardExperience = styled.div`
-  background: ${(props) => props.theme['glass-bg']};
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid ${(props) => props.theme['glass-border']};
-  border-radius: 1rem;
-  padding: 1.75rem 2rem;
-  cursor: default;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+interface JobBodyProps {
+  $open: boolean
+}
 
-  &:hover {
-    border-color: ${(props) => props.theme['green-300']}44;
-    transform: translateX(4px);
+export const JobBody = styled.div<JobBodyProps>`
+  display: grid;
+  grid-template-rows: ${(props) => (props.$open ? '1fr' : '0fr')};
+  transition: grid-template-rows 0.36s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  & > div {
+    min-height: 0;
+    overflow: hidden;
   }
 
-  > .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
+  & p {
+    padding: 0 0 28px 202px;
+    max-width: 900px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: ${(props) => props.theme.soft};
+  }
 
-    > h3 {
-      color: ${(props) => props.theme['gray-100']};
-      font-size: 1.1rem;
-      font-weight: 600;
+  @media ${mobileBreakpoint} {
+    & p {
+      padding: 0 0 22px;
+      font-size: 15px;
+      line-height: 1.7;
     }
-
-    > .date-badge {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: ${(props) => props.theme['green-300']};
-      background: ${(props) => props.theme['green-300']}15;
-      border: 1px solid ${(props) => props.theme['green-300']}33;
-      padding: 0.25rem 0.75rem;
-      border-radius: 2rem;
-      white-space: nowrap;
-    }
-  }
-
-  > .company {
-    display: block;
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: ${(props) => props.theme['green-300']};
-    margin-bottom: 1rem;
-    letter-spacing: 0.03em;
-  }
-
-  > p {
-    color: ${(props) => props.theme['gray-300']};
-    font-size: 0.9rem;
-    line-height: 1.7;
   }
 `

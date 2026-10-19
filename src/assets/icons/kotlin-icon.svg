@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="kotlinGradient" x1="4" y1="60" x2="60" y2="4" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#E44857"/>
+<stop offset="0.47" stop-color="#C711E1"/>
+<stop offset="1" stop-color="#7F52FF"/>
+</linearGradient>
+</defs>
+<path d="M4 4H60L32 32L60 60H4V4Z" fill="url(#kotlinGradient)"/>
+</svg>

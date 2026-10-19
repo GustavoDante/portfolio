@@ -1,39 +1,43 @@
 import { useContext } from 'react'
+import IntroductionToBackEnd from '../../../../assets/files/Coursera-itbd.pdf'
 import { LanguageContext } from '../../../../contexts/LanguageContext'
+import { SectionTitle, TextLink } from '../../styles'
 import { translations } from '../../translations/translations'
-import { FeedBackupsPanelContainer, TestimonialCard } from './styles'
+import { CertificationRow, Quote, QuotesRow } from './styles'
 
 export function FeedBackPanel() {
   const { language } = useContext(LanguageContext)
+  const text = translations[language]
+  const certificate = text.degrees.certificate
+
   return (
-    <FeedBackupsPanelContainer>
-      {translations[language].feedbacks.linkedin.map((item, index) => {
-        const initials = item.name
-          .split(' ')
-          .slice(0, 2)
-          .map((w) => w[0])
-          .join('')
-        return (
-          <TestimonialCard
-            href={item.url}
-            target="_blank"
-            rel="noreferrer"
-            key={item.url}
-            data-reveal
-            data-reveal-delay={String(Math.min(index + 1, 5))}
-          >
-            <p className="testimonial-text">{item.description}</p>
-            <div className="testimonial-author">
-              <div className="avatar">{initials}</div>
-              <div className="author-info">
-                <strong>{item.name}</strong>
-                <span>{item.role}</span>
-              </div>
-              <span className="linkedin-hint">LinkedIn</span>
-            </div>
-          </TestimonialCard>
-        )
-      })}
-    </FeedBackupsPanelContainer>
+    <>
+      <SectionTitle>{text.feedbacks.heading}</SectionTitle>
+
+      <QuotesRow>
+        {text.feedbacks.linkedin.map((item) => (
+          <Quote key={item.url}>
+            <blockquote>{item.description}</blockquote>
+            <figcaption>
+              <strong>{item.name}</strong>
+              <span>{item.role}</span>
+              <TextLink href={item.url} target="_blank" rel="noreferrer">
+                {text.feedbacks.viewOnLinkedin} ↗
+              </TextLink>
+            </figcaption>
+          </Quote>
+        ))}
+      </QuotesRow>
+
+      <CertificationRow>
+        <p>
+          <span className="label">{text.degrees.certification}</span>
+          {certificate.name} · {certificate.issuer} · {certificate.completed}
+        </p>
+        <TextLink href={IntroductionToBackEnd} target="_blank" rel="noreferrer">
+          {certificate.cta} ↗
+        </TextLink>
+      </CertificationRow>
+    </>
   )
 }

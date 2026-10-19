@@ -1,11 +1,20 @@
-import logoGustavo from '../../../../assets/icons/header-gustavo-dante-icon.svg'
-import { FooterContainer } from './styles'
+import { useContext } from 'react'
+import { LanguageContext } from '../../../../contexts/LanguageContext'
+import { TextLink } from '../../styles'
+import { translations } from '../../translations/translations'
+import { FooterContainer, FooterInner } from './styles'
 
 export function Footer() {
+  const { language } = useContext(LanguageContext)
+
   return (
     <FooterContainer>
-      <img src={logoGustavo} alt="Logo Gustavo Dante" />
-      <strong>© Gustavo Dante 2026</strong>
+      <FooterInner>
+        <span>© {new Date().getFullYear()} Gustavo Dante</span>
+        <TextLink href="#topo">
+          {translations[language].footer.backToTop} ↑
+        </TextLink>
+      </FooterInner>
     </FooterContainer>
   )
 }

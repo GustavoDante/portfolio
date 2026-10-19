@@ -8,14 +8,24 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    :focus {
-        outline: none;
-        box-shadow: 0 0 0 2px ${(props) => props.theme['gray-800']};
+    html {
+        scroll-padding-top: 80px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
+    }
+
+    :focus-visible {
+        outline: 2px solid ${(props) => props.theme['green-300']};
+        outline-offset: 3px;
     }
 
     body {
-        background-color: ${(props) => props.theme['blue-900']};
-        color: ${(props) => props.theme['gray-300']};
+        background-color: ${(props) => props.theme.bg};
+        color: ${(props) => props.theme.text};
         -webkit-font-smoothing: antialiased;
     }
 
@@ -29,34 +39,35 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Syne', 'Inter', sans-serif;
     }
 
+    ul {
+        list-style: none;
+    }
+
     button {
         cursor: pointer;
     }
 
     a {
+        color: inherit;
+        text-decoration: none;
         cursor: pointer;
     }
 
-    strong, h1 {
-        white-space: nowrap;
-    }
-
-    /* Scroll reveal animation */
     [data-reveal] {
         opacity: 0;
-        transform: translateY(2rem);
-        transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(16px);
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     }
 
     [data-reveal].is-visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
     }
 
-    [data-reveal-delay='1'] { transition-delay: 0.1s; }
-    [data-reveal-delay='2'] { transition-delay: 0.2s; }
-    [data-reveal-delay='3'] { transition-delay: 0.3s; }
-    [data-reveal-delay='4'] { transition-delay: 0.4s; }
-    [data-reveal-delay='5'] { transition-delay: 0.5s; }
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
 `

@@ -1,91 +1,142 @@
-import {
-  CustomDropdown,
-  DropdownContent,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  LanguageFlag,
-  NavBarContainer,
-  NavBarContent,
-} from './styles'
-import logoGustavo from '../../../../assets/icons/header-gustavo-dante-icon.svg'
-import logoEn from '../../../../assets/icons/en.svg'
-import logoPtBr from '../../../../assets/icons/ptbr.svg'
-import React, { useContext, useState } from 'react'
-import { translations } from '../../translations/translations'
+import { useContext, useEffect, useState } from 'react'
 import { Language, LanguageContext } from '../../../../contexts/LanguageContext'
+import { translations } from '../../translations/translations'
+import {
+  LanguageButton,
+  LanguageToggle,
+  Logo,
+  MenuButton,
+  NavBarContainer,
+  NavBarInner,
+  NavLink,
+  NavLinks,
+  Sheet,
+  SheetLink,
+} from './styles'
+
+type NavKey = 'projects' | 'about' | 'career' | 'contact'
+
+const navItems: { key: NavKey; id: string }[] = [
+  { key: 'projects', id: 'projetos' },
+  { key: 'about', id: 'sobre' },
+  { key: 'career', id: 'carreira' },
+  { key: 'contact', id: 'contato' },
+]
+
+const observedSectionIds = [
+  'topo',
+  'projetos',
+  'sobre',
+  'carreira',
+  'recomendacoes',
+  'contato',
+]
+
+const languages: { value: Language; label: string }[] = [
+  { value: 'pt', label: 'PT' },
+  { value: 'en', label: 'EN' },
+]
 
 export function NavBar() {
-  const [isNavVisible, setIsNavVisible] = useState(false)
   const { language, setLanguageAndSave } = useContext(LanguageContext)
-  const [isOpen, setIsOpen] = useState(false)
-  const toggleDropdown = () => setIsOpen(!isOpen)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeId, setActiveId] = useState('')
+  const text = translations[language].navbar
 
-  const changeLanguage = (newLanguage: Language) => {
-    setLanguageAndSave(newLanguage)
-    setIsOpen(false)
-  }
-  function scrollTo(elementId: string) {
-    document.getElementById(elementId)?.scrollIntoView({
-      behavior: 'smooth',
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px' },
+    )
+
+    observedSectionIds.forEach((id) => {
+      const element = document.getElementById(id)
+      if (element) observer.observe(element)
     })
-    setIsNavVisible(false)
-  }
+
+    const handleScroll = () => {
+      const reachedBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 1
+      if (reachedBottom) setActiveId('contato')
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const closeMenu = () => setIsMenuOpen(false)
+
+  const renderLanguageToggle = (inSheet: boolean) => (
+    <LanguageToggle role="group" aria-label={text.language} inSheet={inSheet}>
+      {languages.map((item) => (
+        <LanguageButton
+          key={item.value}
+          type="button"
+          active={language === item.value}
+          aria-pressed={language === item.value}
+          onClick={() => setLanguageAndSave(item.value)}
+        >
+          {item.label}
+        </LanguageButton>
+      ))}
+    </LanguageToggle>
+  )
 
   return (
     <NavBarContainer>
-      <div>
-        <img src={logoGustavo} alt="simbolo beta azul" />
-      </div>
+      <NavBarInner>
+        <Logo href="#topo" onClick={closeMenu}>
+          Gustavo Dante
+        </Logo>
 
-      <NavBarContent>
-        <a onClick={() => scrollTo('my-skills')}>
-          {translations[language].navbar.skills}
-        </a>
-        <a onClick={() => scrollTo('my-experience')}>
-          {translations[language].navbar.experiences}
-        </a>
-        <a onClick={() => scrollTo('my-degree')}>
-          {translations[language].navbar.degrees}
-        </a>
+        <NavLinks aria-label={text.sections}>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.id}
+              href={`#${item.id}`}
+              active={activeId === item.id}
+              aria-current={activeId === item.id ? 'location' : undefined}
+            >
+              {text[item.key]}
+            </NavLink>
+          ))}
+        </NavLinks>
 
-        <CustomDropdown>
-          <DropdownToggle onClick={toggleDropdown}>
-            <LanguageFlag
-              src={language === 'en' ? logoEn : logoPtBr}
-              alt={language === 'en' ? 'English' : 'Português'}
-            />
-          </DropdownToggle>
-          <DropdownMenu isOpen={isOpen}>
-            <DropdownItem onClick={() => changeLanguage('en')}>
-              <LanguageFlag src={logoEn} alt="English" />
-            </DropdownItem>
-            <DropdownItem onClick={() => changeLanguage('pt')}>
-              <LanguageFlag src={logoPtBr} alt="Português" />
-            </DropdownItem>
-          </DropdownMenu>
-        </CustomDropdown>
-        <div>
-          <a
-            onClick={() => {
-              setIsNavVisible(!isNavVisible)
-            }}
-          >
-            &#9776;
-          </a>
-          <DropdownContent isVisible={isNavVisible}>
-            <a onClick={() => scrollTo('my-skills')}>
-              {translations[language].navbar.skills}
-            </a>
-            <a onClick={() => scrollTo('my-experience')}>
-              {translations[language].navbar.experiences}
-            </a>
-            <a onClick={() => scrollTo('my-degree')}>
-              {translations[language].navbar.degrees}
-            </a>
-          </DropdownContent>
-        </div>
-      </NavBarContent>
+        {renderLanguageToggle(false)}
+
+        <MenuButton
+          type="button"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          {isMenuOpen ? text.close : text.menu}
+        </MenuButton>
+      </NavBarInner>
+
+      {isMenuOpen && (
+        <Sheet>
+          <nav aria-label={text.sections}>
+            {navItems.map((item) => (
+              <SheetLink key={item.id} href={`#${item.id}`} onClick={closeMenu}>
+                {text[item.key]}
+                <span aria-hidden="true">→</span>
+              </SheetLink>
+            ))}
+          </nav>
+          {renderLanguageToggle(true)}
+        </Sheet>
+      )}
     </NavBarContainer>
   )
 }

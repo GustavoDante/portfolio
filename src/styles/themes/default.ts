@@ -27,9 +27,12 @@ export const defaultTheme = {
 
   'yellow-500': '#FFA445',
 
-  // Glass morphism tokens
-  'glass-bg': 'rgba(255, 255, 255, 0.04)',
-  'glass-border': 'rgba(255, 255, 255, 0.08)',
-  'glass-hover': 'rgba(255, 255, 255, 0.07)',
-  'glass-strong': 'rgba(255, 255, 255, 0.06)',
+  bg: '#0B0C10',
+  raised: '#13151B',
+  line: '#242730',
+  text: '#ECECEF',
+  'text-strong': '#D6D8E0',
+  soft: '#C4C7D1',
+  muted: '#8F93A1',
+  ink: '#06130C',
 }

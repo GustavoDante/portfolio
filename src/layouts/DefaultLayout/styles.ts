@@ -1,13 +1,6 @@
 import styled from 'styled-components'
 
 export const LayoutContainer = styled.div`
-  padding: 0 8rem;
-
-  @media screen and (max-width: 1050px) {
-    padding: 0 4rem;
-  }
-
-  @media screen and (max-width: 675px) {
-    padding: 0 3rem;
-  }
+  min-height: 100vh;
+  background: ${(props) => props.theme.bg};
 `

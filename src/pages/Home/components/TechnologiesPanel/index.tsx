@@ -1,184 +1,106 @@
-import React, { useContext, useState } from 'react'
-import apiIcon from '../../../../assets/icons/api-icon.svg'
-import authjsIcon from '../../../../assets/icons/authjs-icon.svg'
-import awsIcon from '../../../../assets/icons/aws-icon.svg'
-import cssIcon from '../../../../assets/icons/css-icon.svg'
-import dockerIcon from '../../../../assets/icons/docker-icon.svg'
-import gitIcon from '../../../../assets/icons/git-icon.svg'
-import googleCloudIcon from '../../../../assets/icons/google-icon.svg'
-import htmlIcon from '../../../../assets/icons/html-icon.svg'
-import jqueryIcon from '../../../../assets/icons/jquery-icon.svg'
-import laravelIcon from '../../../../assets/icons/laravel-icon.svg'
-import mysqlIcon from '../../../../assets/icons/mysql-icon.svg'
-import nestIcon from '../../../../assets/icons/nest-icon.svg'
-import nextIcon from '../../../../assets/icons/next-icon.svg'
-import nodeIcon from '../../../../assets/icons/node-icon.svg'
-import postgresqlIcon from '../../../../assets/icons/postgresql-icon.svg'
-import prismaIcon from '../../../../assets/icons/prisma-icon.svg'
-import reactIcon from '../../../../assets/icons/react-icon.svg'
-import shadcnIcon from '../../../../assets/icons/shadcn-icon.svg'
-import styledComponentsIcon from '../../../../assets/icons/styled-components-icon.svg'
-import tailwindIcon from '../../../../assets/icons/tailwind-icon.svg'
-import typescriptIcon from '../../../../assets/icons/typescript-icon.svg'
+import { useContext } from 'react'
 import { LanguageContext } from '../../../../contexts/LanguageContext'
-import { calculateExperience } from '../../../../utils/calculateExperience'
+import { formatTechnologyYears } from '../../../../utils/formatTechnologyYears'
+import { SectionTitle } from '../../styles'
 import {
   technologyStartDates,
   translations,
 } from '../../translations/translations'
 import {
-  CarouselDots,
-  Dot,
-  TechCarouselItem,
-  TechCarouselSlide,
-  TechCarouselTrack,
-  TechCarouselWrapper,
-  TechnologieWithOverlay,
-  TecnologiesContainer,
+  AboutText,
+  StackFootnote,
+  StackGrid,
+  StackGroupLabel,
+  StackItem,
+  StackList,
 } from './styles'
 
-const reactemailIcon = reactIcon
+type GroupKey = 'frontend' | 'backend' | 'data' | 'cloud'
 
-type TechnologyKey =
-  | 'reactjs'
-  | 'tailwindcss'
-  | 'nodejs'
-  | 'typescript'
-  | 'postgresql'
-  | 'mysql'
-  | 'laravel'
-  | 'nestjs'
-  | 'nextjs'
-  | 'shadcn'
-  | 'authjs'
-  | 'prisma'
-  | 'reactemail'
-  | 'git'
-  | 'html5'
-  | 'css3'
-  | 'restapi'
-  | 'jquery'
-  | 'googlecloud'
-  | 'aws'
-  | 'styledcomponents'
-  | 'docker'
-
-type Technology = {
+interface StackEntry {
   name: string
-  icon: string
-  key: TechnologyKey
+  keys: string[]
 }
 
-const ITEMS_PER_SLIDE = 6
+interface StackGroup {
+  key: GroupKey
+  entries: StackEntry[]
+}
+
+const earliestStartDate = (keys: string[]) =>
+  keys.map((key) => technologyStartDates[key]).sort()[0]
 
 export function TechnologiesPanel() {
   const { language } = useContext(LanguageContext)
-  const [activeSlide, setActiveSlide] = useState(0)
+  const text = translations[language]['about-me']
 
-  const technologies: Technology[] = [
-    { name: 'ReactJS', icon: reactIcon, key: 'reactjs' },
-    { name: 'Tailwind CSS', icon: tailwindIcon, key: 'tailwindcss' },
-    { name: 'NodeJs', icon: nodeIcon, key: 'nodejs' },
-    { name: 'TypeScript', icon: typescriptIcon, key: 'typescript' },
-    { name: 'PostgreSQL', icon: postgresqlIcon, key: 'postgresql' },
-    { name: 'MySQL', icon: mysqlIcon, key: 'mysql' },
-    { name: 'Laravel', icon: laravelIcon, key: 'laravel' },
-    { name: 'NestJS', icon: nestIcon, key: 'nestjs' },
-    { name: 'Next.js', icon: nextIcon, key: 'nextjs' },
-    { name: 'Shadcn/UI', icon: shadcnIcon, key: 'shadcn' },
-    { name: 'Auth.js', icon: authjsIcon, key: 'authjs' },
-    { name: 'Prisma', icon: prismaIcon, key: 'prisma' },
-    { name: 'React Email', icon: reactemailIcon, key: 'reactemail' },
-    { name: 'Git', icon: gitIcon, key: 'git' },
-    { name: 'HTML 5', icon: htmlIcon, key: 'html5' },
-    { name: 'CSS 3', icon: cssIcon, key: 'css3' },
-    { name: 'REST APIs', icon: apiIcon, key: 'restapi' },
-    { name: 'jQuery', icon: jqueryIcon, key: 'jquery' },
-    { name: 'Google Cloud', icon: googleCloudIcon, key: 'googlecloud' },
-    { name: 'AWS', icon: awsIcon, key: 'aws' },
+  const groups: StackGroup[] = [
     {
-      name: 'Styled Components',
-      icon: styledComponentsIcon,
-      key: 'styledcomponents',
+      key: 'frontend',
+      entries: [
+        { name: 'React', keys: ['reactjs'] },
+        { name: 'TypeScript', keys: ['typescript'] },
+        { name: 'Next.js', keys: ['nextjs'] },
+        { name: 'Tailwind CSS', keys: ['tailwindcss'] },
+        { name: 'Styled Components', keys: ['styledcomponents'] },
+        { name: text.htmlAndCss, keys: ['html5', 'css3'] },
+      ],
     },
-    { name: 'Docker', icon: dockerIcon, key: 'docker' },
+    {
+      key: 'backend',
+      entries: [
+        { name: 'Node.js', keys: ['nodejs'] },
+        { name: 'NestJS', keys: ['nestjs'] },
+        { name: 'REST', keys: ['restapi'] },
+        { name: 'Laravel', keys: ['laravel'] },
+        { name: 'Java', keys: ['java'] },
+        { name: 'Kotlin', keys: ['kotlin'] },
+        { name: 'Contract First', keys: ['contractfirst'] },
+      ],
+    },
+    {
+      key: 'data',
+      entries: [
+        { name: 'PostgreSQL', keys: ['postgresql'] },
+        { name: 'MySQL', keys: ['mysql'] },
+        { name: 'Prisma', keys: ['prisma'] },
+      ],
+    },
+    {
+      key: 'cloud',
+      entries: [
+        { name: 'Docker', keys: ['docker'] },
+        { name: 'AWS', keys: ['aws'] },
+        { name: 'Google Cloud', keys: ['googlecloud'] },
+        { name: 'Git', keys: ['git'] },
+      ],
+    },
   ]
-
-  // Group into slides for the mobile carousel
-  const slides: Technology[][] = []
-  for (let i = 0; i < technologies.length; i += ITEMS_PER_SLIDE) {
-    slides.push(technologies.slice(i, i + ITEMS_PER_SLIDE))
-  }
-
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const el = e.currentTarget
-    const slideWidth = el.scrollWidth / slides.length
-    const current = Math.round(el.scrollLeft / slideWidth)
-    setActiveSlide(current)
-  }
-
-  const goToSlide = (index: number) => {
-    const track = document.getElementById('tech-carousel-track')
-    if (!track) return
-    const slideWidth = track.scrollWidth / slides.length
-    track.scrollTo({ left: slideWidth * index, behavior: 'smooth' })
-    setActiveSlide(index)
-  }
 
   return (
     <>
-      {/* Desktop grid */}
-      <TecnologiesContainer data-reveal>
-        {technologies.map((tech) => (
-          <TechnologieWithOverlay key={tech.key}>
-            <img src={tech.icon} alt={`${tech.name.toLowerCase()} icon`} />
-            <div>
-              <h3>{tech.name}</h3>
-              <p>
-                <span>
-                  {calculateExperience(
-                    technologyStartDates[tech.key],
-                    language,
-                  )}
-                </span>
-                {translations[language].technologies[tech.key].description}
-              </p>
-            </div>
-          </TechnologieWithOverlay>
-        ))}
-      </TecnologiesContainer>
+      <SectionTitle>{text.heading}</SectionTitle>
+      <AboutText>{text.text}</AboutText>
 
-      {/* Mobile carousel */}
-      <TechCarouselWrapper>
-        <TechCarouselTrack id="tech-carousel-track" onScroll={handleScroll}>
-          {slides.map((slide, slideIndex) => (
-            <TechCarouselSlide key={slideIndex}>
-              {slide.map((tech) => (
-                <TechCarouselItem key={tech.key}>
-                  <img src={tech.icon} alt={`${tech.name} icon`} />
-                  <span>{tech.name}</span>
-                  <small>
-                    {calculateExperience(
-                      technologyStartDates[tech.key],
-                      language,
-                    )}
-                  </small>
-                </TechCarouselItem>
+      <StackGrid>
+        {groups.map((group) => (
+          <div key={group.key}>
+            <StackGroupLabel>{text.groups[group.key]}</StackGroupLabel>
+            <StackList>
+              {group.entries.map((entry) => (
+                <StackItem key={entry.name}>
+                  <span>{entry.name}</span>
+                  <span>
+                    {formatTechnologyYears(earliestStartDate(entry.keys))}
+                  </span>
+                </StackItem>
               ))}
-            </TechCarouselSlide>
-          ))}
-        </TechCarouselTrack>
-        <CarouselDots>
-          {slides.map((_, i) => (
-            <Dot
-              key={i}
-              active={i === activeSlide}
-              onClick={() => goToSlide(i)}
-              aria-label={`Slide ${i + 1}`}
-            />
-          ))}
-        </CarouselDots>
-      </TechCarouselWrapper>
+            </StackList>
+          </div>
+        ))}
+      </StackGrid>
+
+      <StackFootnote>{text.footnote}</StackFootnote>
     </>
   )
 }

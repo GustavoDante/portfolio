@@ -21,221 +21,57 @@ export const technologyStartDates: Record<string, string> = {
   aws: '2022-08-01',
   styledcomponents: '2021-08-01',
   docker: '2022-08-01',
-}
-
-const technologiesTranslations = {
-  en: {
-    description:
-      'Technologies I master with hands-on experience. Hover over each technology to discover detailed information about my expertise and practical knowledge.',
-    reactjs: {
-      description:
-        'ReactJS is a JavaScript library for creating reactive and efficient user interfaces. It uses reusable components and selective interface update, providing optimized performance. With a JSX syntax and an active community, ReactJS is widely used and supported by several tools and libraries.',
-    },
-    tailwindcss: {
-      description:
-        'Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs. It offers rapid UI development with consistent design systems, responsive design utilities, and excellent developer experience with features like JIT compilation and extensive customization options.',
-    },
-    nodejs: {
-      description:
-        'Node.js is a JavaScript backend application development platform. It uses the Google Chrome V8 execution engine to run JavaScript on the server. Node.js is known for its asynchronous and event-driven nature, which makes it efficient and suitable for high-performance real-time applications. With a vast ecosystem of packages and libraries, Node.js is widely used to build scalable servers, APIs and web applications.',
-    },
-    typescript: {
-      description:
-        'TypeScript is a programming language that extends JavaScript by adding static typing features. It is used to develop scalable and high quality JavaScript applications, providing advanced type checking features and support for modern JavaScript features.',
-    },
-    postgresql: {
-      description:
-        'PostgreSQL is a powerful open source relational database management system. It provides advanced features such as ACID transaction support, complex queries, efficient indexing and extensibility, making it a popular choice for applications that require robust data storage.',
-    },
-    mysql: {
-      description:
-        'MySQL is another widely used relational database management system. It is known for its ease of use, scalability and performance. MySQL is used in many web applications to efficiently store and retrieve data.',
-    },
-    laravel: {
-      description:
-        'Laravel is a PHP web development framework that follows the Model-View-Controller (MVC) pattern. It offers an elegant syntax and comprehensive features to streamline web development, such as routing, database management, authentication and more.',
-    },
-    nestjs: {
-      description:
-        'NestJS is a Node.js backend application framework inspired by Angular. It provides a modular and scalable framework for building robust backend applications using TypeScript. NestJS makes it easy to create RESTful APIs by applying object-oriented programming principles and dependency injection.',
-    },
-    nextjs: {
-      description:
-        'Next.js is a React framework for creating server-side rendered web applications. It supports server-side rendering (SSR) and static generation, performance optimization, advanced routing and features such as pre-rendering, code splitting and on-demand loading.',
-    },
-    shadcn: {
-      description:
-        'Shadcn/UI is a collection of beautiful, accessible and customizable React components built with Radix UI and Tailwind CSS. It provides a modern design system with copy-paste components that can be easily integrated into Next.js applications, offering consistent UI patterns and excellent developer experience.',
-    },
-    authjs: {
-      description:
-        'Auth.js (formerly NextAuth.js) is a complete authentication solution for Next.js applications. It provides secure authentication with support for multiple providers (OAuth, email, credentials), session management, JWT tokens, and database adapters, making it easy to implement robust authentication systems.',
-    },
-    prisma: {
-      description:
-        'Prisma is a next-generation ORM for Node.js and TypeScript. It provides type-safe database access, auto-generated queries, seamless migrations, and an intuitive data modeling experience. Prisma simplifies database workflows with its powerful schema definition and excellent IDE support.',
-    },
-    reactemail: {
-      description:
-        'React Email is a collection of high-quality, unstyled components for creating beautiful emails using React and TypeScript. It provides a developer-friendly way to build responsive email templates with modern tooling, preview capabilities, and seamless integration with popular email services.',
-    },
-    git: {
-      description:
-        'Git is a widely used distributed version control system. It allows you to track and manage changes to a software project over time. With Git, you can create branches, merge code, undo changes, and collaborate with others efficiently.',
-    },
-    html5: {
-      description:
-        'HTML (HyperText Markup Language) is the markup language used to create the structure and content of web pages. It defines the structure of elements on a page, such as headers, paragraphs, links, and images.',
-    },
-    css3: {
-      description:
-        'CSS (Cascading Style Sheets) is a style language used to define the appearance and layout of elements on a web page. It allows you to control colors, fonts, sizes, positioning, and other visual aspects of a website.',
-    },
-    restapi: {
-      description:
-        'REST (Representational State Transfer) is a widely used architectural style for creating web APIs (Application Programming Interfaces). It defines a set of principles for communication between client and server, using HTTP methods such as GET, POST, PUT and DELETE to perform operations on resources.',
-    },
-    jquery: {
-      description:
-        'jQuery is a popular JavaScript library that simplifies DOM manipulation, animation, event handling, and AJAX requests on a web page. It provides a simplified syntax and cross-browser compatibility, making it easy to develop interactive and dynamic features on websites.',
-    },
-    googlecloud: {
-      description:
-        "Google Cloud is a cloud computing platform offered by Google. Like AWS, Google Cloud provides infrastructure, storage, data analytics, machine learning, and other cloud-based solutions. It is used by companies and developers to run applications, store data, and leverage Google's global infrastructure.",
-    },
-    aws: {
-      description:
-        'AWS is a cloud computing platform provided by Amazon. It offers a wide range of services, such as computing, storage, database, machine learning, and more. Companies and developers can use AWS to host, manage, and scale applications and services flexibly and securely.',
-    },
-    styledcomponents: {
-      description:
-        'Styled Components is a styling library for React and other JavaScript libraries. It allows you to write CSS styles in a more modular and cohesive way, creating components with encapsulated styles. Styles are defined using the CSS-in-JS syntax, making it easy to create reusable and easier to maintain interfaces.',
-    },
-    docker: {
-      description:
-        'Docker is an open source platform that allows you to build, deploy, and run applications in containers. Containers are isolated and lightweight units that contain everything needed to run an application, including code, libraries, and dependencies. They allow applications to run consistently in any environment, simplifying the development and deployment process.',
-    },
-  },
-  pt: {
-    description:
-      'Tecnologias que domino com experiência prática comprovada. Passe o mouse sobre cada tecnologia para descobrir informações detalhadas sobre minha expertise e conhecimento aplicado.',
-    reactjs: {
-      description:
-        'O ReactJS é uma biblioteca JavaScript para criação de interfaces de usuário reativas e eficientes. Ele utiliza componentes reutilizáveis e atualização seletiva da interface, proporcionando um desempenho otimizado. Com uma sintaxe JSX e uma comunidade ativa, o ReactJS é amplamente utilizado e suportado por diversas ferramentas e bibliotecas.',
-    },
-    tailwindcss: {
-      description:
-        'Tailwind CSS é um framework CSS utilitário que fornece classes de baixo nível para construir designs personalizados. Oferece desenvolvimento rápido de UI com sistemas de design consistentes, utilitários de design responsivo e excelente experiência do desenvolvedor com recursos como compilação JIT e amplas opções de customização.',
-    },
-    nodejs: {
-      description:
-        'O Node.js é uma plataforma de desenvolvimento de aplicações backend em JavaScript. Ele utiliza o motor de execução V8 do Google Chrome para executar o JavaScript no servidor. O Node.js é conhecido por sua natureza assíncrona e orientada a eventos, o que o torna eficiente e adequado para aplicações de alto desempenho em tempo real. Com um vasto ecossistema de pacotes e bibliotecas, o Node.js é amplamente utilizado para construir servidores, APIs e aplicativos web escaláveis.',
-    },
-    typescript: {
-      description:
-        'TypeScript é uma linguagem de programação que estende o JavaScript adicionando recursos de tipagem estática. Ele é usado para desenvolver aplicativos JavaScript escaláveis e de alta qualidade, fornecendo recursos avançados de verificação de tipo e suporte a recursos modernos do JavaScript.',
-    },
-    postgresql: {
-      description:
-        'O PostgreSQL é um poderoso sistema de gerenciamento de banco de dados relacional de código aberto. Ele fornece recursos avançados, como suporte a transações ACID, consultas complexas, indexação eficiente e extensibilidade, tornando-o uma escolha popular para aplicativos que requerem armazenamento de dados robusto.',
-    },
-    mysql: {
-      description:
-        'MySQL é outro sistema de gerenciamento de banco de dados relacional amplamente utilizado. É conhecido por sua facilidade de uso, escalabilidade e desempenho. O MySQL é usado em muitas aplicações web para armazenar e recuperar dados de forma eficiente.',
-    },
-    laravel: {
-      description:
-        'Laravel é um framework de desenvolvimento web em PHP que segue o padrão Model-View-Controller (MVC). Ele oferece uma sintaxe elegante e recursos abrangentes para agilizar o desenvolvimento web, como roteamento, gerenciamento de banco de dados, autenticação e muito mais.',
-    },
-    nestjs: {
-      description:
-        'NestJS é um framework de aplicativo back-end em Node.js inspirado no Angular. Ele fornece uma estrutura modular e escalável para a construção de aplicativos back-end robustos usando TypeScript. O NestJS facilita a criação de APIs RESTful, aplicando os princípios de programação orientada a objetos e injeção de dependência.',
-    },
-    nextjs: {
-      description:
-        'Next.js é um framework React para criação de aplicativos web renderizados no servidor. Ele oferece suporte a renderização do lado do servidor (SSR) e geração estática, otimização de desempenho, roteamento avançado e recursos como pré-renderização, divisão de código e carregamento sob demanda.',
-    },
-    shadcn: {
-      description:
-        'Shadcn/UI é uma coleção de componentes React bonitos, acessíveis e personalizáveis construídos com Radix UI e Tailwind CSS. Fornece um sistema de design moderno com componentes copy-paste que podem ser facilmente integrados em aplicações Next.js, oferecendo padrões de UI consistentes e excelente experiência do desenvolvedor.',
-    },
-    authjs: {
-      description:
-        'Auth.js (anteriormente NextAuth.js) é uma solução completa de autenticação para aplicações Next.js. Fornece autenticação segura com suporte para múltiplos provedores (OAuth, email, credenciais), gerenciamento de sessões, tokens JWT e adaptadores de banco de dados, facilitando a implementação de sistemas de autenticação robustos.',
-    },
-    prisma: {
-      description:
-        'Prisma é um ORM de próxima geração para Node.js e TypeScript. Fornece acesso type-safe ao banco de dados, queries auto-geradas, migrações seamless e uma experiência intuitiva de modelagem de dados. O Prisma simplifica workflows de banco de dados com sua poderosa definição de schema e excelente suporte de IDE.',
-    },
-    reactemail: {
-      description:
-        'React Email é uma coleção de componentes de alta qualidade e sem estilo para criar belos emails usando React e TypeScript. Fornece uma maneira amigável ao desenvolvedor de construir templates de email responsivos com ferramentas modernas, capacidades de preview e integração perfeita com serviços de email populares.',
-    },
-    git: {
-      description:
-        'Git é um sistema de controle de versão distribuído amplamente utilizado. Ele permite rastrear e gerenciar alterações em um projeto de software ao longo do tempo. Com o Git, você pode criar ramificações, mesclar código, desfazer alterações e colaborar com outras pessoas de forma eficiente.',
-    },
-    html5: {
-      description:
-        'HTML (HyperText Markup Language) é a linguagem de marcação usada para criar a estrutura e o conteúdo de páginas da web. Ele define a estrutura dos elementos em uma página, como cabeçalhos, parágrafos, links e imagens.',
-    },
-    css3: {
-      description:
-        'CSS (Cascading Style Sheets) é uma linguagem de estilo usada para definir a aparência e o layout dos elementos em uma página da web. Ele permite controlar cores, fontes, tamanhos, posicionamento e outros aspectos visuais de um site.',
-    },
-    restapi: {
-      description:
-        'REST (Representational State Transfer) é um estilo arquitetural amplamente usado para a criação de APIs (Interfaces de Programação de Aplicativos) web. Ele define um conjunto de princípios para a comunicação entre cliente e servidor, utilizando métodos HTTP, como GET, POST, PUT e DELETE, para realizar operações em recursos.',
-    },
-    jquery: {
-      description:
-        'jQuery é uma biblioteca JavaScript popular que simplifica a manipulação do DOM, a animação, o gerenciamento de eventos e a realização de requisições AJAX em uma página da web. Ele fornece uma sintaxe simplificada e compatibilidade com vários navegadores, facilitando o desenvolvimento de recursos interativos e dinâmicos em websites.',
-    },
-    googlecloud: {
-      description:
-        'O Google Cloud é uma plataforma de computação em nuvem oferecida pelo Google. Assim como a AWS, o Google Cloud fornece serviços de infraestrutura, armazenamento, análise de dados, aprendizado de máquina e outras soluções baseadas em nuvem. É usado por empresas e desenvolvedores para executar aplicativos, armazenar dados e aproveitar a infraestrutura global do Google.',
-    },
-    aws: {
-      description:
-        'AWS é uma plataforma de computação em nuvem fornecida pela Amazon. Ela oferece uma ampla gama de serviços, como computação, armazenamento, banco de dados, aprendizado de máquina e muito mais. Empresas e desenvolvedores podem usar a AWS para hospedar, gerenciar e dimensionar aplicativos e serviços de forma flexível e segura.',
-    },
-    styledcomponents: {
-      description:
-        'Styled Components é uma biblioteca de estilização para React e outras bibliotecas JavaScript. Permite escrever estilos CSS de forma mais modular e coesa, criando componentes com estilos encapsulados. Os estilos são definidos usando a sintaxe do CSS-in-JS, facilitando a criação de interfaces reutilizáveis e mais fáceis de manter.',
-    },
-    docker: {
-      description:
-        'Docker é uma plataforma de código aberto que permite criar, implantar e executar aplicativos em contêineres. Os contêineres são unidades isoladas e leves que contêm todo o necessário para executar um aplicativo, incluindo código, bibliotecas e dependências. Eles permitem que os aplicativos sejam executados consistentemente em qualquer ambiente, simplificando o processo de desenvolvimento e implantação.',
-    },
-  },
+  java: '2026-06-01',
+  kotlin: '2026-06-01',
+  contractfirst: '2026-06-01',
 }
 
 export const translations = {
   en: {
     'about-me': {
-      title: 'About me',
-      text: 'Full-Stack Developer with 4+ years of experience building scalable web applications — from architecture planning to cloud deployment. I specialize in modern React ecosystems (Next.js, TypeScript, micro-frontends) and backend solutions (Node.js, NestJS, PostgreSQL). I thrive in collaborative team environments, bridge the gap between design and engineering, and am deeply passionate about clean code, performance, and developer experience.',
-      highlights: [
-        'Frontend: Next.js (App/Pages Router), React.js, TypeScript, CSR & SSR, Context API, RSC, SSG',
-        'UI & Styling: Tailwind CSS, Styled Components, Shadcn/UI, Figma to Code, Responsive Design',
-        'Backend: Node.js, NestJS, Express, PostgreSQL, MySQL, Prisma ORM, Firebase, Firestore',
-        'DevOps & Cloud: Docker, Nginx, PM2, AWS (EC2, S3), Google Cloud, CI/CD (GitHub Actions)',
-        'English: Advanced reading, intermediate technical conversation',
-      ],
+      label: 'About',
+      heading: 'Full-Stack, from the API contract to deployment.',
+      groups: {
+        frontend: 'Frontend',
+        backend: 'Backend',
+        data: 'Data',
+        cloud: 'Cloud and DevOps',
+      },
+      htmlAndCss: 'HTML and CSS',
+      footnote:
+        'Numbers indicate years of use. Java, Kotlin and Contract First since 2026. English: advanced reading, intermediate technical conversation.',
+      text: 'I have been building scalable web applications for over 5 years, from architecture planning to cloud deployment. My focus is the React ecosystem (Next.js, TypeScript, micro-frontends) and the backend with Node.js, NestJS and PostgreSQL. I like working close to design and product, with clean code and attention to performance.',
     },
     contacts: {
-      whatsapp: 'Whatsapp',
-      linkedin: 'Linkedin',
-    },
-    skills: {
-      title: 'My Skills',
+      label: 'Contact',
+      heading: "Let's talk.",
+      text: 'WhatsApp and LinkedIn are the most direct ways to reach me.',
+      whatsapp: 'WhatsApp',
+      linkedin: 'LinkedIn',
+      github: 'GitHub',
+      resume: 'Resume (PDF)',
     },
     experiences: {
-      title: 'Professional Experience',
+      label: 'Career',
+      heading: "Where I've worked.",
       jobs: [
         {
+          job: 'Mid-Level Full-Stack Developer',
+          data: 'Jun 2026 — Present',
+          company: 'BBChain (via Comeia)',
+          description:
+            'Allocated to the BBChain project through Comeia, working on a product that combines Next.js and React on the frontend with Java and Kotlin services. Adopted a contract-first approach to API development, defining the contract before the implementation to keep frontend and backend aligned. Picked up new technologies on the job while delivering features end to end.',
+        },
+        {
+          job: 'Senior Full-Stack Developer',
+          data: 'Feb 2026 — May 2026',
+          company: 'Facyal',
+          description:
+            'Built from scratch a management platform for an aesthetics clinic with three locations in Florida (Miami, Orlando, and Jacksonville). Architected a pnpm + Turborepo monorepo with a NestJS 11 REST API, a Next.js 16 / React 19 ERP, and the company landing page, sharing Zod 4 contracts between apps. PostgreSQL with Prisma 7, JWT authentication, transactional emails with Resend, FullCalendar scheduling, Recharts dashboards, and CI/CD with GitHub Actions deploying to a VPS with PM2 and Nginx.',
+        },
+        {
           job: 'Frontend Developer',
-          data: 'Nov 2025 — Present',
+          data: 'Nov 2025 — Feb 2026',
           company: 'Noorden Group',
           description:
             'Directly involved in building scalable frontend interfaces for Zenvia using Next.js, React.js, and a micro-frontends architecture. Closely collaborating with design and product teams to ensure visual fidelity and usability across system interfaces. Actively debugging and contributing to micro-frontend and micro-service projects, ensuring consistent data validation and communication between services.',
@@ -271,59 +107,104 @@ export const translations = {
       ],
     },
     degrees: {
-      title: 'Certifications & Education',
+      certification: 'Certification',
+      certificate: {
+        name: 'Introduction to Back-End Development',
+        issuer: 'Meta, Coursera',
+        completed: 'Jun 2023',
+        learnTitle: 'What you will learn',
+        learn: [
+          'Distinguish between front-end, back-end, and full-stack developer roles',
+          'Create and style a webpage with HTML and CSS',
+          'Understand the benefits of UI frameworks',
+        ],
+        skills: [
+          'React.js',
+          'Bootstrap',
+          'Responsive Web Design',
+          'Full-Stack Web Development',
+        ],
+        cta: 'View certificate',
+      },
     },
     projects: {
-      title: 'My Projects',
-      watchgather: {
-        description:
-          'Movie and series discovery app powered by The Movie Database API, with filtering, watchlists, and responsive design.',
-        tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'TMDB API'],
-        url: 'https://watchgather.gustavodante.com',
-      },
-      sinthope: {
-        description:
-          "Institutional website built to modernize the union's communication, presenting benefits, agreements, news and notices in a clear layout with quick access to WhatsApp and official documents.",
-        tags: [
-          'Next.js',
-          'React.js',
-          'TypeScript',
-          'Sanity CMS',
-          'Tailwind CSS',
-        ],
-        url: 'https://www.sinthoscpe.com.br/',
-      },
-      vitarisx: {
-        description:
-          'Online therapy platform focused on accessibility, connecting patients with certified psychologists through simple scheduling, a guided booking flow, and a welcoming experience at every step.',
-        tags: [
-          'Next.js',
-          'React.js',
-          'TypeScript',
-          'Shadcn/UI',
-          'Tailwind CSS',
-          'Prisma',
-          'PostgreSQL',
-          'Auth.js',
-        ],
-        url: 'https://vitarisx.com/',
-      },
-      cinqfinance: {
-        description:
-          'Platform for financial consultants and planners to manage clients, deals and proposals in a single panel, with organized funnels, task management and integrations designed for daily consultative work.',
-        tags: [
-          'Node.js',
-          'TypeScript',
-          'NestJS',
-          'Express',
-          'RESTful',
-          'Swagger',
-        ],
-        url: 'https://plataforma.cinqfinance.com/',
+      label: 'Projects',
+      heading: 'Sites and platforms that are live.',
+      filters: { all: 'All', platform: 'Platforms and apps', site: 'Sites' },
+      filterGroup: 'Filter projects',
+      pickerGroup: 'Choose a project',
+      desktopPreview: 'Project desktop preview',
+      mobilePreview: 'Project mobile preview',
+      ctaText:
+        'Need a website or a platform? Tell me what you are looking for and I will reply on WhatsApp.',
+      ctaButton: 'Request a quote',
+      items: {
+        facyal: {
+          name: 'Facyal Skin Experts',
+          type: 'Platform',
+          description:
+            'Premium aesthetics clinic with locations in Florida and Brazil. I built the landing page and the clinic management ERP (scheduling, patients, dashboards) in a monorepo sharing Zod contracts between a NestJS API and Next.js apps.',
+        },
+        vitarisx: {
+          name: 'VitarisX',
+          type: 'Platform',
+          description:
+            'Telemedicine platform for booking online psychology and psychiatry appointments, with a NestJS API, real-time notifications over SSE, scheduled jobs, and a four-tier Next.js frontend.',
+        },
+        bolsas: {
+          name: 'Brasil Mais Bolsas',
+          type: 'Platform',
+          description:
+            'Scholarship marketplace where students compare tuition, filter by course, city and mode, and enroll with up to 70% off. Includes an admin dashboard, transactional emails, and SEO-focused pages.',
+        },
+        jukebox: {
+          name: 'Jukebox',
+          type: 'App',
+          description:
+            'Collaborative music room: open a box, add YouTube songs to a shared queue, and every browser hears the same song at the same position. Concurrent queue advances are made idempotent with row-level locking.',
+        },
+        watchgather: {
+          name: 'WatchGather',
+          type: 'App',
+          description:
+            'Movie and series discovery app powered by The Movie Database API, with filtering, watchlists, and responsive design.',
+        },
+        indiespensavel: {
+          name: 'INDIEspensável Store',
+          type: 'Website',
+          description:
+            'E-commerce for indie fashion and accessories with featured carousels, category navigation, a full shopping cart, and Stripe-ready payments.',
+        },
+        sinthoscpe: {
+          name: 'SINTHOSCPE',
+          type: 'Website',
+          description:
+            'Portal for the hotel, bar and restaurant workers union of Pernambuco: member benefits, downloadable conventions, notices, and news.',
+        },
+        lauana: {
+          name: 'Lauana Beauty Clinic',
+          type: 'Website',
+          description:
+            'Website for a hair therapy clinic in Caruaru, presenting protocols, technologies, before-and-after results, testimonials, and WhatsApp booking.',
+        },
+        nilton: {
+          name: 'Dr. Nilton Barros',
+          type: 'Website',
+          description:
+            'Conversion-focused landing page for an orthopedist with 30+ years of experience, guiding the patient from problem to solution to booking.',
+        },
+        wellyson: {
+          name: 'Wellyson José · Psychologist',
+          type: 'Website',
+          description:
+            'Welcoming institutional site for a psychologist, presenting the psychoanalytic approach, FAQ, and in-person or online appointments with direct WhatsApp booking.',
+        },
       },
     },
     feedbacks: {
-      title: 'Recommendations',
+      label: 'Recommendations',
+      heading: 'What colleagues say.',
+      viewOnLinkedin: 'View on LinkedIn',
       linkedin: [
         {
           name: 'Arthur Brito',
@@ -342,44 +223,73 @@ export const translations = {
       ],
     },
     header: {
-      job: 'Software Developer',
-      slogan: 'Creating exceptional digital experiences.',
-      curriculum: 'Curriculum',
+      job: 'Full-Stack Developer',
+      slogan:
+        'Web products from concept to deployment. 5+ years of experience with React, Next.js and Node, in product teams and on websites and platforms for clients.',
+      viewProjects: 'View projects',
+      whatsapp: 'Message me on WhatsApp',
+      nowLabel: 'Now',
+      nowRole: 'Mid-Level Full-Stack at BBChain',
     },
     navbar: {
-      english: 'English',
-      portuguese: 'Portuguese',
-      skills: 'Skills',
-      experiences: 'Experiences',
-      degrees: 'Degrees',
+      sections: 'Sections',
+      language: 'Language',
+      projects: 'Projects',
+      about: 'About',
+      career: 'Career',
+      contact: 'Contact',
+      menu: 'Menu',
+      close: 'Close',
     },
-    technologies: technologiesTranslations.en,
+    footer: {
+      backToTop: 'Back to top',
+    },
   },
   pt: {
     'about-me': {
-      title: 'Sobre mim',
-      text: 'Desenvolvedor Full-Stack com mais de 4 anos de experiência construindo aplicações web escaláveis — desde o planejamento da arquitetura até o deploy na nuvem. Especializado no ecossistema moderno do React (Next.js, TypeScript, micro-frontends) e soluções backend (Node.js, NestJS, PostgreSQL). Trabalho bem em equipe, conecto design e engenharia, e sou apaixonado por código limpo, performance e experiência do desenvolvedor.',
-      highlights: [
-        'Frontend: Next.js (App/Pages Router), React.js, TypeScript, CSR & SSR, Context API, RSC, SSG',
-        'UI & Estilização: Tailwind CSS, Styled Components, Shadcn/UI, Figma to Code, Design Responsivo',
-        'Backend: Node.js, NestJS, Express, PostgreSQL, MySQL, Prisma ORM, Firebase, Firestore',
-        'DevOps & Cloud: Docker, Nginx, PM2, AWS (EC2, S3), Google Cloud, CI/CD (GitHub Actions)',
-        'Inglês: leitura avançada, conversação técnica intermediária',
-      ],
+      label: 'Sobre',
+      heading: 'Full-Stack, do contrato da API ao deploy.',
+      groups: {
+        frontend: 'Frontend',
+        backend: 'Backend',
+        data: 'Dados',
+        cloud: 'Cloud e DevOps',
+      },
+      htmlAndCss: 'HTML e CSS',
+      footnote:
+        'Números indicam anos de uso. Java, Kotlin e Contract First desde 2026. Inglês: leitura avançada, conversação técnica intermediária.',
+      text: 'Construo aplicações web escaláveis há mais de 5 anos, do planejamento da arquitetura à publicação na nuvem. Meu foco é o ecossistema React (Next.js, TypeScript, micro-frontends) e o backend com Node.js, NestJS e PostgreSQL. Gosto de trabalhar perto de design e produto, com código limpo e atenção à performance.',
     },
     contacts: {
-      whatsapp: 'Whatsapp',
-      linkedin: 'Linkedin',
-    },
-    skills: {
-      title: 'Minhas habilidades',
+      label: 'Contato',
+      heading: 'Vamos conversar.',
+      text: 'WhatsApp e LinkedIn são os canais mais diretos para falar comigo.',
+      whatsapp: 'WhatsApp',
+      linkedin: 'LinkedIn',
+      github: 'GitHub',
+      resume: 'Currículo (PDF)',
     },
     experiences: {
-      title: 'Experiências profissionais',
+      label: 'Carreira',
+      heading: 'Onde trabalhei.',
       jobs: [
         {
+          job: 'Desenvolvedor Full-Stack Pleno',
+          data: 'Jun 2026 — Atualmente',
+          company: 'BBChain (via Comeia)',
+          description:
+            'Alocado no projeto da BBChain por meio da Comeia, atuando em um produto que combina Next.js e React no frontend com serviços em Java e Kotlin. Adoção da abordagem contract first no desenvolvimento de APIs, definindo o contrato antes da implementação para manter frontend e backend alinhados. Aprendizado de novas tecnologias na prática, entregando funcionalidades de ponta a ponta.',
+        },
+        {
+          job: 'Desenvolvedor Full-Stack Sênior',
+          data: 'Fev 2026 — Mai 2026',
+          company: 'Facyal',
+          description:
+            'Construí do zero uma plataforma de gestão para uma clínica de estética com três sedes na Flórida (Miami, Orlando e Jacksonville). Arquitetei um monorepo pnpm + Turborepo com API REST em NestJS 11, ERP em Next.js 16 / React 19 e a landing page da empresa, compartilhando contratos Zod 4 entre os apps. PostgreSQL com Prisma 7, autenticação JWT, e-mails transacionais com Resend, agenda com FullCalendar, dashboards com Recharts e CI/CD com GitHub Actions para deploy em VPS com PM2 e Nginx.',
+        },
+        {
           job: 'Desenvolvedor Frontend Pleno',
-          data: 'Nov 2025 — Atualmente',
+          data: 'Nov 2025 — Fev 2026',
           company: 'Noorden Group',
           description:
             'Atuação direta na construção de interfaces escaláveis para a Zenvia, utilizando Next.js e React.js e a arquitetura de Micro-frontends. Colaboração próxima com times de design e produto para garantir fidelidade visual e usabilidade em interfaces do sistema. Solução de bugs e contribuição ativa nos projetos que utilizavam arquitetura de micro-frontends e micro-serviços se comunicando entre si.',
@@ -415,59 +325,104 @@ export const translations = {
       ],
     },
     degrees: {
-      title: 'Certificações e formações',
+      certification: 'Certificação',
+      certificate: {
+        name: 'Introduction to Back-End Development',
+        issuer: 'Meta, Coursera',
+        completed: 'jun 2023',
+        learnTitle: 'O que você aprende',
+        learn: [
+          'Distinguir as funções de desenvolvedor front-end, back-end e full-stack',
+          'Criar e estilizar uma página web com HTML e CSS',
+          'Entender os benefícios dos frameworks de UI',
+        ],
+        skills: [
+          'React.js',
+          'Bootstrap',
+          'Responsive Web Design',
+          'Full-Stack Web Development',
+        ],
+        cta: 'Ver certificado',
+      },
     },
     projects: {
-      title: 'Meus Projetos',
-      watchgather: {
-        description:
-          'App de descoberta de filmes e séries com a API do The Movie Database, filtros, listas e design responsivo.',
-        tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'TMDB API'],
-        url: 'https://watchgather.gustavodante.com',
-      },
-      sinthope: {
-        description:
-          'Site institucional desenvolvido para modernizar a comunicação do sindicato, apresentando benefícios, convenções, notícias e avisos de forma clara, com foco em leitura fácil e acesso rápido ao WhatsApp e documentos oficiais.',
-        tags: [
-          'Next.js',
-          'React.js',
-          'TypeScript',
-          'Sanity CMS',
-          'Tailwind CSS',
-        ],
-        url: 'https://www.sinthoscpe.com.br/',
-      },
-      vitarisx: {
-        description:
-          'Plataforma de terapia online focada em acessibilidade, conectando pacientes a psicólogos certificados com agendamento simples, fluxo guiado de marcação de sessões e experiência acolhedora em todas as etapas.',
-        tags: [
-          'Next.js',
-          'React.js',
-          'TypeScript',
-          'Shadcn/UI',
-          'Tailwind CSS',
-          'Prisma',
-          'PostgreSQL',
-          'Auth.js',
-        ],
-        url: 'https://vitarisx.com/',
-      },
-      cinqfinance: {
-        description:
-          'Plataforma para consultores e planejadores financeiros gerenciarem clientes, negócios e propostas em um único painel, com funis organizados, gestão de tarefas e integrações pensadas para o dia a dia do atendimento consultivo.',
-        tags: [
-          'Node.js',
-          'TypeScript',
-          'NestJS',
-          'Express',
-          'RESTful',
-          'Swagger',
-        ],
-        url: 'https://plataforma.cinqfinance.com/',
+      label: 'Projetos',
+      heading: 'Sites e plataformas que estão no ar.',
+      filters: { all: 'Todos', platform: 'Plataformas e apps', site: 'Sites' },
+      filterGroup: 'Filtrar projetos',
+      pickerGroup: 'Escolher projeto',
+      desktopPreview: 'Prévia desktop do projeto',
+      mobilePreview: 'Prévia mobile do projeto',
+      ctaText:
+        'Precisa de um site ou de uma plataforma? Conte o que busca e eu respondo pelo WhatsApp.',
+      ctaButton: 'Pedir orçamento',
+      items: {
+        facyal: {
+          name: 'Facyal Skin Experts',
+          type: 'Plataforma',
+          description:
+            'Clínica de estética premium com unidades na Flórida e no Brasil. Construí a landing page e o ERP de gestão da clínica (agenda, pacientes, dashboards) em um monorepo com contratos Zod compartilhados entre a API NestJS e os apps Next.js.',
+        },
+        vitarisx: {
+          name: 'VitarisX',
+          type: 'Plataforma',
+          description:
+            'Plataforma de telemedicina para agendamento de consultas online de psicologia e psiquiatria, com API NestJS, notificações em tempo real via SSE, jobs agendados e frontend Next.js em quatro camadas.',
+        },
+        bolsas: {
+          name: 'Brasil Mais Bolsas',
+          type: 'Plataforma',
+          description:
+            'Marketplace de bolsas de estudo em que o aluno compara mensalidades, filtra por curso, cidade e modalidade e contrata com até 70% de desconto. Inclui painel administrativo, e-mails transacionais e páginas focadas em SEO.',
+        },
+        jukebox: {
+          name: 'Jukebox',
+          type: 'App',
+          description:
+            'Sala de música colaborativa: abra uma box, adicione músicas do YouTube a uma fila compartilhada e todo navegador ouve a mesma música na mesma posição. Avanços concorrentes da fila são idempotentes com bloqueio em nível de linha.',
+        },
+        watchgather: {
+          name: 'WatchGather',
+          type: 'App',
+          description:
+            'App de descoberta de filmes e séries com a API do The Movie Database, filtros, listas e design responsivo.',
+        },
+        indiespensavel: {
+          name: 'INDIEspensável Store',
+          type: 'Site',
+          description:
+            'E-commerce de moda e acessórios indie com carrosséis de destaques, navegação por categorias, carrinho de compras completo e pagamentos com Stripe.',
+        },
+        sinthoscpe: {
+          name: 'SINTHOSCPE',
+          type: 'Site',
+          description:
+            'Portal do sindicato dos trabalhadores em hotéis, bares e restaurantes de Pernambuco: benefícios para associados, convenções para download, avisos e notícias.',
+        },
+        lauana: {
+          name: 'Lauana Beauty Clinic',
+          type: 'Site',
+          description:
+            'Site de clínica de terapia capilar em Caruaru, apresentando protocolos, tecnologias, antes e depois, depoimentos e agendamento via WhatsApp.',
+        },
+        nilton: {
+          name: 'Dr. Nilton Barros',
+          type: 'Site',
+          description:
+            'Landing page focada em conversão para ortopedista com mais de 30 anos de experiência, levando o paciente do problema à solução e ao agendamento.',
+        },
+        wellyson: {
+          name: 'Wellyson José · Psicólogo',
+          type: 'Site',
+          description:
+            'Site institucional acolhedor para psicólogo, apresentando a abordagem psicanalítica, perguntas frequentes e atendimento presencial ou online com agendamento direto pelo WhatsApp.',
+        },
       },
     },
     feedbacks: {
-      title: 'Recomendações',
+      label: 'Recomendações',
+      heading: 'O que colegas dizem.',
+      viewOnLinkedin: 'Ver no LinkedIn',
       linkedin: [
         {
           name: 'Arthur Brito',
@@ -486,17 +441,26 @@ export const translations = {
       ],
     },
     header: {
-      job: 'Desenvolvedor de Software',
-      slogan: 'Criando experiências digitais excepcionais.',
-      curriculum: 'Currículo',
+      job: 'Desenvolvedor Full-Stack',
+      slogan:
+        'Produtos web do conceito ao deploy. Mais de 5 anos de experiência com React, Next.js e Node, em times de produto e em sites e plataformas para clientes.',
+      viewProjects: 'Ver projetos',
+      whatsapp: 'Falar no WhatsApp',
+      nowLabel: 'Agora',
+      nowRole: 'Full-Stack Pleno na BBChain',
     },
     navbar: {
-      english: 'Inglês',
-      portuguese: 'Português',
-      skills: 'Habilidades',
-      experiences: 'Experiências',
-      degrees: 'Certificações',
+      sections: 'Seções',
+      language: 'Idioma',
+      projects: 'Projetos',
+      about: 'Sobre',
+      career: 'Carreira',
+      contact: 'Contato',
+      menu: 'Menu',
+      close: 'Fechar',
     },
-    technologies: technologiesTranslations.pt,
+    footer: {
+      backToTop: 'Voltar ao topo',
+    },
   },
 }

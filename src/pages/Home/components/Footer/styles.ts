@@ -1,25 +1,31 @@
 import styled from 'styled-components'
+import { mobileBreakpoint, monoLabel } from '../../styles'
 
 export const FooterContainer = styled.footer`
+  border-top: 1px solid ${(props) => props.theme.line};
+`
+
+export const FooterInner = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
   display: flex;
-  position: absolute;
-  left: 0;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  width: 100%;
-  background-color: ${(props) => props.theme['gray-700']};
-  color: ${(props) => props.theme['gray-300']};
-  padding: 1rem 8rem;
+  justify-content: space-between;
+  gap: 8px 16px;
 
-  & > img {
-    width: 10rem;
+  & > span {
+    ${monoLabel}
+    font-size: 11px;
+    color: ${(props) => props.theme.muted};
   }
 
-  @media screen and (max-width: 1050px) {
-    padding: 1rem 4rem;
+  & > a {
+    font-size: 14px;
   }
 
-  @media screen and (max-width: 675px) {
-    padding: 1rem 3rem;
+  @media ${mobileBreakpoint} {
+    padding: 24px 20px;
   }
 `
