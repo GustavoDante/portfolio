@@ -12,6 +12,7 @@ import {
   LinksRow,
   PhoneFrame,
   ProjectInfo,
+  ProjectMeta,
   ProjectList,
   ProjectRow,
   ProjectScroller,
@@ -119,22 +120,24 @@ export function PortfolioPanel() {
           </Screens>
 
           <ProjectInfo>
-            <span className="type">{item.type}</span>
+            <ProjectMeta>
+              <span className="type">{item.type}</span>
+              <LinksRow>
+                {selected.links.map((link) => (
+                  <TextLink
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.label} ↗
+                  </TextLink>
+                ))}
+              </LinksRow>
+            </ProjectMeta>
             <h3>{item.name}</h3>
             <p className="description">{item.description}</p>
             <p className="stack">{selected.tags.join('  ·  ')}</p>
-            <LinksRow>
-              {selected.links.map((link) => (
-                <TextLink
-                  key={link.url}
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {link.label} ↗
-                </TextLink>
-              ))}
-            </LinksRow>
           </ProjectInfo>
         </Showcase>
       </Layout>

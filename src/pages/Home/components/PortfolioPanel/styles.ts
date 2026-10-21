@@ -85,7 +85,7 @@ export const ProjectRow = styled.button<ActiveProps>`
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 56px;
+  min-height: 60px;
   padding: 0;
   border: 0;
   border-top: 1px solid ${(props) => props.theme.line};
@@ -159,7 +159,7 @@ export const Showcase = styled.div`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 40px;
   ${fadeInSwap}
 
   @media ${mobileBreakpoint} {
@@ -185,13 +185,17 @@ export const BrowserFrame = styled.div`
   & > img {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 2 / 1;
     object-fit: cover;
     object-position: top;
   }
 
   @media ${mobileBreakpoint} {
     border-radius: 10px;
+
+    & > img {
+      aspect-ratio: 16 / 10;
+    }
   }
 `
 
@@ -243,16 +247,10 @@ export const PhoneFrame = styled.div`
 export const ProjectInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding-top: 4px;
-
-  & > .type {
-    ${monoLabel}
-    color: ${(props) => props.theme.muted};
-  }
+  gap: 10px;
 
   & > h3 {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-weight: 700;
@@ -260,16 +258,15 @@ export const ProjectInfo = styled.div`
   }
 
   & > .description {
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.65;
     color: ${(props) => props.theme.soft};
-    max-width: 640px;
   }
 
   & > .stack {
     ${monoLabel}
     font-size: 11px;
-    line-height: 1.9;
+    line-height: 1.8;
     color: ${(props) => props.theme.muted};
     text-transform: none;
     letter-spacing: 0.03em;
@@ -277,14 +274,41 @@ export const ProjectInfo = styled.div`
 
   @media ${mobileBreakpoint} {
     gap: 12px;
-    padding-top: 0;
 
     & > h3 {
       font-size: 26px;
+      order: 1;
     }
 
     & > .description {
-      font-size: 15px;
+      line-height: 1.7;
+      order: 2;
+    }
+
+    & > .stack {
+      line-height: 1.9;
+      order: 3;
+    }
+  }
+`
+
+export const ProjectMeta = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 28px;
+
+  & > .type {
+    ${monoLabel}
+    color: ${(props) => props.theme.muted};
+  }
+
+  @media ${mobileBreakpoint} {
+    display: contents;
+
+    & > .type {
+      order: 0;
     }
   }
 `
@@ -292,13 +316,23 @@ export const ProjectInfo = styled.div`
 export const LinksRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 28px;
-  margin-top: 4px;
+  gap: 0 24px;
+
+  & > a {
+    min-height: 36px;
+    font-size: 14px;
+  }
 
   @media ${mobileBreakpoint} {
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 0;
+    gap: 0;
+    order: 4;
+
+    & > a {
+      min-height: 44px;
+      font-size: 15px;
+    }
   }
 `
 

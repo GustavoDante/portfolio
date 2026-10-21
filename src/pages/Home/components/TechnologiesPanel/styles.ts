@@ -6,7 +6,6 @@ export const AboutText = styled.p`
   font-size: 20px;
   line-height: 1.7;
   color: ${(props) => props.theme['text-strong']};
-  max-width: 760px;
 
   @media ${mobileBreakpoint} {
     margin-top: 22px;

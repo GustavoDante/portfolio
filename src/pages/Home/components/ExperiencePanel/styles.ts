@@ -116,7 +116,6 @@ export const JobBody = styled.div<JobBodyProps>`
 
   & p {
     padding: 0 0 28px 202px;
-    max-width: 900px;
     font-size: 16px;
     line-height: 1.75;
     color: ${(props) => props.theme.soft};

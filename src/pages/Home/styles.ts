@@ -49,7 +49,6 @@ export const SectionTitle = styled.h2`
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: ${(props) => props.theme.white};
-  max-width: 720px;
   text-wrap: balance;
 
   @media ${mobileBreakpoint} {
